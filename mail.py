@@ -7,7 +7,8 @@ def connect(server, user, password, remote_folder="inbox"):
     m = imaplib.IMAP4_SSL(server)
     m.login(user, password)
     #m.select()
-    m.select(remote_folder, readonly=False)
+    #m.select(remote_folder, readonly=False)
+    m.select(remote_folder, readonly=True)
     return m
 
 # Download all attachment files for a given email
@@ -22,13 +23,13 @@ def downloaAttachmentsInEmail(m, emailid, outputdir):
         if part.get_content_maintype() != 'multipart' and part.get('Content-Disposition') is not None:
             open(outputdir + '/' + part.get_filename(), 'wb').write(part.get_payload(decode=True))
 
+
 # Download all the attachment files for all emails in the inbox.
 def downloadAllAttachmentsInInbox(server, user, password, outputdir, remote_folder="inbox"):
     m = connect(server, user, password, remote_folder)
     # (ALL/UNSEEN)
     #resp, items = m.search(None, "(ALL)")
     resp, items = m.search(None, "(UNSEEN)")
-
     items = items[0].split()
     for emailid in items:
         downloaAttachmentsInEmail(m, emailid, outputdir)
