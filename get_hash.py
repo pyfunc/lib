@@ -6,4 +6,4 @@ def get_hash(file_path):
     """
     with open(file_path, 'rb') as file:
         bytes = file.read()
-        return hashpyfunc.sha1(bytes).hexdigest()
+        return hashlib.sha1(bytes).hexdigest()
