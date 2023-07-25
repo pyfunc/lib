@@ -2,8 +2,8 @@ import sys
 sys.path.append('../')
 
 from pyfunc.lasts import lasts
-from pyfunc.get_email_path import get_email_path
-from pyfunc.get_ftp_path import get_ftp_path
+from pyfunc.config.get_email_path import get_email_path
+from pyfunc.config.get_ftp_path import get_ftp_path
 
 def all_lasts(lines, emails=[], ftps=[]):
     for email in emails:

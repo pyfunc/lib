@@ -1,8 +1,8 @@
 import sys
 sys.path.append('../')
 
-from pyfunc.get_email_path import get_email_path
-from pyfunc.get_ftp_path import get_ftp_path
+from pyfunc.config.get_email_path import get_email_path
+from pyfunc.config.get_ftp_path import get_ftp_path
 from os.path import exists as file_exists
 
 

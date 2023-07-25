@@ -2,6 +2,7 @@ import sys
 sys.path.append('../')
 
 from pyfunc.email.download_attachments_in_email import download_attachments_in_email
+from pyfunc.email.connect import connect
 
 # Download all the attachment files for all emails in the inbox.
 def download_all_attachments_in_inbox(server, user, password, outputdir, remote_folder="inbox"):

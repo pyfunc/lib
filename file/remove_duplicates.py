@@ -1,5 +1,8 @@
-from pyfunc.find_duplicates import find_duplicates
-from pyfunc.move_file import move_file
+import sys
+sys.path.append('../')
+
+from pyfunc.file.find_duplicates import find_duplicates
+from pyfunc.file.move_file import move_file
 
 def remove_duplicates(source, compare, duplicated):
     # Provide directory paths here

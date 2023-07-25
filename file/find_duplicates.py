@@ -1,5 +1,8 @@
 import os
-from pyfunc.get_hash import get_hash
+import sys
+sys.path.append('../')
+
+from pyfunc.file.get_hash import get_hash
 
 def find_duplicates(directory):
     """

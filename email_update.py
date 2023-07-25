@@ -1,7 +1,10 @@
-from pyfunc.mail import downloadAllAttachmentsInInbox
-from pyfunc.get_email_path import get_email_path
+import sys
+sys.path.append('../')
+
+from pyfunc.email.download_all_attachments_in_inbox import download_all_attachments_in_inbox
+from pyfunc.config.get_email_path import get_email_path
 
 def email_update(emails):
     for email in emails:
         data_path = get_email_path(email)
-        downloadAllAttachmentsInInbox(email["server"], email["username"], email["password"], data_path)
+        download_all_attachments_in_inbox(email["server"], email["username"], email["password"], data_path)

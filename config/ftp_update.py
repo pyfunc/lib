@@ -1,5 +1,5 @@
-from pyfunc.ftp_download import ftp_download
-from pyfunc.get_ftp_path import get_ftp_path
+from pyfunc.config.ftp_download import ftp_download
+from pyfunc.config.get_ftp_path import get_ftp_path
 
 def ftp_update(ftps):
     for ftp in ftps:

@@ -1,6 +1,9 @@
 import shutil
-from pyfunc.get_filename_from_path import get_filename_from_path
-from pyfunc.check_and_create_path import check_and_create_path
+import sys
+sys.path.append('../')
+
+from pyfunc.file.get_filename_from_path import get_filename_from_path
+from pyfunc.file.check_and_create_path import check_and_create_path
 
 ## move a file from the source path to the destination path.
 def move_file(src, dst, out="./duplicated/"):

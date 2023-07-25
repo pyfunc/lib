@@ -1,6 +1,6 @@
 import os
 from pyfunc.email_update import email_update
-from pyfunc.ftp_update import ftp_update
+from pyfunc.config.ftp_update import ftp_update
 
 def lasts(image_path, limit=18, emails=[], ftps=[]):
     #email_brama()
