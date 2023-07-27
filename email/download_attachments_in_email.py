@@ -1,8 +1,12 @@
 import email
 
-def download_attachments_in_email(m, emailid, outputdir, xx):
+def download_attachments_in_email(m, emailid="", outputdir="", xx=1):
     #m.store(emailid, '+FLAGS', '\Seen')
-    resp, data = m.fetch(emailid, "(BODY.PEEK[])")
+    print("download_attachments_in_email emailid:", emailid)
+    print("download_attachments_in_email outputdir:", outputdir)
+    print("download_attachments_in_email xx:", xx)
+
+    resp, data = m.fetch(str(emailid), "(BODY.PEEK[])")
     print("mail emailid:", emailid)
     #resp, data = m.fetch(emailid, '(RFC822)')
     print("mail respo:", resp)

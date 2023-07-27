@@ -3,12 +3,11 @@ import email
 
 
 # Connect to an IMAP server
-def connect(server, user, password, remote_folder="inbox"):
+def connect(server, user, password):
     m = imaplib.IMAP4_SSL(server)
     m.login(user, password)
     #m.select()
     #m.select(remote_folder, readonly=False)
-    m.select(remote_folder, readonly=True)
     return m
 
 # Download all attachment files for a given email
