@@ -12,6 +12,7 @@ import os
 from PyPDF2 import PdfMerger
 # python -m pip install --upgrade pip
 # pip install PyPDF2
+# https://pypi.org/project/PyPDF2/
 
 output_folder = ""
 cover_folder = ""
