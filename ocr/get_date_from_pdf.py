@@ -66,14 +66,25 @@ def get_date_from_pdf(file_path,
                     print(pattern[0])
                     datestr = str(match)
                     print(datestr)
+                    #exit()
 
                     #date_format='%b%d%Y'
                     if len(pattern) > 1:
-                        print(pattern[1])
-                        dates = datetime.strptime(datestr, pattern[1])
+
+                        if len(pattern) > 2:
+                            print(pattern[2])
+                            # Pierwsza część `(?<=\d)(st|nd|rd|th)\b` odpowiada za usuwanie 'st', 'nd', 'rd', 'th' po liczbie,
+                            # druga część `\s` odpowiada za usuwanie spacji. Operator `|` w wyrażeniu regularnym oznacza "lub", dzięki czemu wyrażenie pasuje do dowolnej z tych dwóch części.
+                            datestr = re.sub(pattern[1], '', datestr)
+                            dates = datetime.strptime(datestr, pattern[2])
+                        else:
+                            print(pattern[1])
+                            dates = datetime.strptime(datestr, pattern[1])
                     else:
                         dates = dparser.parse(datestr, fuzzy=True)
                     print(dates)
+                    #exit()
+
 
                     out_by_format_list=[]
                     for format_out in format_out_list:
