@@ -102,8 +102,15 @@ def find_company(text="", company_list=[], company_list_out=[]):
             company_occ_list[company] = matches
 
     sorted(company_occ_list)
-    print(company_occ_list)
+    print("company_occ_list: ", company_occ_list)
     company_list_out = list(company_occ_list.keys())
+    print("company_list_out: ", company_list_out)
+    return company_list_out
     ##reduced to array
+    try:
+        print("np.array(company_list_out)", np.array(company_list_out))
+        #return np.array(company_list_out)
+    except Exception as e:
+        print(e)
+        return company_list_out
 
-    return np.array(company_list_out)

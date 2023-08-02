@@ -36,12 +36,13 @@ def from_month_to_company(source="./", company_list=[""], extension_list=['.pdf'
                             company_list
                         )
 
+                        print("invoice_company: ", invoice_company)
                         if len(invoice_company):
                             print("from_month_to_company invoice_company: ", invoice_company)
 
                             path_folder = os.path.join(source, str(invoice_company[0]), )
-                            #print("from_month_to_company path_folder: ", path_folder)
-                            #exit()
+                            # print("from_month_to_company path_folder: ", path_folder)
+                            # exit()
 
                             if not os.path.exists(path_folder):
                                 os.makedirs(path_folder)
@@ -52,10 +53,10 @@ def from_month_to_company(source="./", company_list=[""], extension_list=['.pdf'
                             # target_name = os.path.join(directory, f'{modified_date}_{name}')
 
                             print(f'from_month_to_company FROM: {path_in} TO: {path_out}')
-                            #exit()
+                            # exit()
 
                             os.rename(path_in, path_out)
                     except Exception as e:
                         print(e)
                         continue
-                    #exit()
+                    # exit()
