@@ -23,19 +23,25 @@ def get_file_hash(file_path):
             file_hash.update(chunk)
     return file_hash.hexdigest()
 
-def move_duplicate_files(directory, duplicated):
+def move_duplicate_files(directory, duplicated, extension = ".pdf"):
     # Dictionary to store file hashes and paths
     file_hashes = {}
     # Traverse the directory recursively
     for root, dirs, files in os.walk(directory):
         for file in files:
-            file_path = os.path.join(root, file)
-            file_hash = get_file_hash(file_path)
-            if file_hash in file_hashes and file_path != file_hashes[file_hash]:
-                duplic = file_hashes[file_hash]
-                print(f"move_duplicate_files duplicated: {file_path} => {duplic}")
-                # Uncomment the below line to remove duplicate files
-                # os.remove(file_path)
-                move_file(file_path, '', duplicated)
-            else:
-                file_hashes[file_hash] = file_path
+            if file.endswith(extension):
+                file_path = os.path.join(root, file)
+                file_hash = get_file_hash(file_path)
+                if file_hash in file_hashes and file_path != file_hashes[file_hash]:
+                    duplic = file_hashes[file_hash]
+                    print(f"move_duplicate_files duplicated: {file_path} => {duplic}")
+                    # move only the shortest path
+                    move_file_path = file_path
+                    if len(file_path) > len(duplic):
+                        move_file_path = duplic
+                        print(f"move {move_file_path}")
+
+                    # os.remove(file_path)
+                    move_file(move_file_path, '', duplicated)
+                else:
+                    file_hashes[file_hash] = file_path
