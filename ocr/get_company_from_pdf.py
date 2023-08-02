@@ -4,6 +4,7 @@ from pdfreader import SimplePDFViewer
 import datefinder
 # https://pypi.org/project/datefinder/
 import re
+import numpy as np
 from datetime import datetime
 
 # Install:
@@ -57,7 +58,7 @@ def get_company_from_pdf(file_path,
     # text = convertPdf2String(fd).encode("ascii", "xmlcharrefreplace")
     text = convertPdf2String(fd)
     text = text.lower()
-    #print(text)
+    # print(text)
 
     # text = ''.join(e for e in text if e.isalnum())
     if pattern_clean_list:
@@ -74,20 +75,35 @@ def get_company_from_pdf(file_path,
 
     #print(text)
     # exit()
+    # sortowanie firm od najdluzszej nazwy
 
-    company_list_out = []
+    company_list_out = find_company(text, company_list, [])
 
+    if not company_list_out:
+        text = remove_only_single_spaces(text)
+        print(text)
+        company_list_out = find_company(text, company_list)
+
+    print("company_list_out: ", company_list_out)
+
+    #exit()
+
+    return company_list_out
+
+
+def find_company(text="", company_list=[], company_list_out=[]):
+    company_occ_list = {}
     for company in company_list:
+
         matches = text.find(company)
         print(company, matches, len(text))
         if matches >= 0:
-            company_list_out.append(company)
-            # exit()
+            #company_list_out.append(company)
+            company_occ_list[company] = matches
 
-            #out_by_format_list = []
-            #for format_out in format_out_list:
-                #out_by_format_list.append(
-                 #   dates.strftime(format_out)
-                #)
-            #return out_by_format_list
-    return company_list_out
+    sorted(company_occ_list)
+    print(company_occ_list)
+    company_list_out = list(company_occ_list.keys())
+    ##reduced to array
+
+    return np.array(company_list_out)

@@ -35,7 +35,6 @@ def from_month_to_company(source="./", company_list=[""], extension_list=['.pdf'
                             [],
                             company_list
                         )
-                        #print("invoice_company: ", invoice_company)
 
                         if len(invoice_company):
                             print("from_month_to_company invoice_company: ", invoice_company)
@@ -59,4 +58,4 @@ def from_month_to_company(source="./", company_list=[""], extension_list=['.pdf'
                     except Exception as e:
                         print(e)
                         continue
-                    # exit()
+                    #exit()
