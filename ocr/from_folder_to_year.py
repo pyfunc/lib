@@ -27,7 +27,7 @@ def from_folder_to_year(source="./", subfolder="", extension_list=['.pdf']):
                 if name.endswith(extension):
                     print(name)
                     path_in = os.path.join(directory, name)
-                    print(path_in)
+                    print("path_in: ", path_in)
                     # timestamp = os.path.getmtime(source_name)
                     try:
                         invoice_date = get_date_from_pdf(
@@ -70,12 +70,11 @@ def from_folder_to_year(source="./", subfolder="", extension_list=['.pdf']):
                         )
 
                         if len(invoice_date):
-                            print(invoice_date)
+                            print("invoice_date: ", invoice_date)
 
                             path_folder = os.path.join(root, str(invoice_date[0]), "expenses",
                                                        str(invoice_date[1]), subfolder)
-                            print(path_folder)
-                            exit()
+                            print("path_folder: ", path_folder)
 
                             if not os.path.exists(path_folder):
                                 os.makedirs(path_folder)
@@ -90,6 +89,7 @@ def from_folder_to_year(source="./", subfolder="", extension_list=['.pdf']):
 
                             print(f'FROM: {path_in} TO: {path_out}')
                             os.rename(path_in, path_out)
-                    except Exception:
+                    except Exception as e:
+                        print(e)
                         continue
                     # exit()

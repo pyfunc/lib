@@ -15,6 +15,18 @@ from datetime import datetime
 
 import dateutil.parser as dparser
 
+import sys
+from pypdf import PdfReader
+# pip3 install pypdf
+
+def convertPdf2String(path):
+    # load PDF file
+    reader = PdfReader(path)
+    number_of_pages = len(reader.pages)
+    page = reader.pages[0]
+    text = page.extract_text()
+    return text
+
 
 # https://dateutil.readthedocs.io/en/stable/parser.html
 # pip install python-dateutil
@@ -34,11 +46,15 @@ def get_date_from_pdf(file_path,
                       pattern_clean_list='[^A-Za-z0-9 .-]+',
                       pattern_input_list=[r'\d{2}\.\d{2}\.\d{4}']):
     fd = open(file_path, "rb")
-    viewer = SimplePDFViewer(fd)
-    viewer.render()
+    #viewer = SimplePDFViewer(fd)
+    #viewer.render()
+    #text = str(viewer.canvas.strings)
 
-    # text = viewer.canvas.text_content
-    text = str(viewer.canvas.strings)
+    #text = convertPdf2String(fd).encode("ascii", "xmlcharrefreplace")
+    text = convertPdf2String(fd)
+    print(text)
+    #exit()
+
     # text = ''.join(e for e in text if e.isalnum())
     for pattern_clean in pattern_clean_list:
         if pattern_clean == "remove_extra_spaces":
