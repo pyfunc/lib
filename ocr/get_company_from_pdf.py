@@ -56,7 +56,8 @@ def get_company_from_pdf(file_path,
 
     # text = convertPdf2String(fd).encode("ascii", "xmlcharrefreplace")
     text = convertPdf2String(fd)
-    # print(text)
+    text = text.lower()
+    #print(text)
 
     # text = ''.join(e for e in text if e.isalnum())
     if pattern_clean_list:
@@ -71,24 +72,22 @@ def get_company_from_pdf(file_path,
                 text = re.sub(pattern_clean, '', text)
             # text = re.sub('\W+', '', text)
 
-    print(text)
+    #print(text)
     # exit()
 
+    company_list_out = []
+
     for company in company_list:
-
         matches = text.find(company)
-        print(matches, len(text))
-        if matches:
-
-            print(matches)
-            return [company]
+        print(company, matches, len(text))
+        if matches >= 0:
+            company_list_out.append(company)
             # exit()
 
-            out_by_format_list = []
-            for format_out in format_out_list:
-                out_by_format_list.append(
-                    dates.strftime(format_out)
-                )
-
-            return out_by_format_list
-    return []
+            #out_by_format_list = []
+            #for format_out in format_out_list:
+                #out_by_format_list.append(
+                 #   dates.strftime(format_out)
+                #)
+            #return out_by_format_list
+    return company_list_out
