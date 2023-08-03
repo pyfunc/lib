@@ -1,9 +1,10 @@
 class company_list():
     company_list = ["languagetooler", "ionos", "xolo", "netcup", "strato", "premium", "namesilo", "whmcs",
                     "aftermarket",
-                    "restream", "sav", "github", "zoom", "openai", "zoho", "tuneup", "TuneUp Accounting",
+                    "restream", "sav", "github", "zoom", "openai", "zoho", "tuneup", "TuneUp Accounting", "Envato",
+                    "LeapSwitch", "easeus", "sixt", "b.center", "useme", "Universal",
                     # "onlineaccounting",
-                    "Top Connect", "bahn", "trustecure", "netisar", "linkedin", "holvi", "modulesgarden", "WebSouls",
+                    "Top Connect", "bahn", "TRUSTSECURE", "netisar", "linkedin", "holvi", "modulesgarden", "WebSouls",
                     "cloudflare", "namecheap", "ovh", "mserwis", "domeny.tv", "amazon", "microsoft", "porkbun", "zone",
                     "azure", "dd", "aws", "8x8", "88"]
 
