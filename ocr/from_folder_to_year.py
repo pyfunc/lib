@@ -38,12 +38,13 @@ def from_folder_to_year(source="./", subfolder="", extension_list=['.pdf']):
                             get_date_from_pdf_pattern.pattern_input_list
                         )
 
+                        print("from_folder_to_year invoice_date: ", invoice_date, len(invoice_date))
+
                         if len(invoice_date):
-                            print("invoice_date: ", invoice_date)
 
                             path_folder = os.path.join(root, str(invoice_date[0]), "expenses",
                                                        str(invoice_date[1]), subfolder)
-                            print("path_folder: ", path_folder)
+                            print("from_folder_to_yearpath_folder: ", path_folder)
 
                             if not os.path.exists(path_folder):
                                 os.makedirs(path_folder)
