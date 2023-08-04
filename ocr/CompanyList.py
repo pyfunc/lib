@@ -2,7 +2,7 @@ class CompanyList:
     company_list_array = ["languagetooler", "ionos", "xolo", "netcup", "strato", "premium", "namesilo", "whmcs",
                           "aftermarket", "Michau", "DigitalOcean", "PERSKIMEDIA", "ICDSoft",
                           "restream", "sav", "github", "zoom", "openai", "zoho", "tuneup", "TuneUp Accounting",
-                          "Envato",
+                          "Envato", "dynadot", "wise", "transferwise",
                           "LeapSwitch", "easeus", "sixt", "b.center", "useme", "Universal",
                           # "onlineaccounting",
                           "Top Connect", "bahn", "TRUSTSECURE", "netisar", "linkedin", "holvi", "modulesgarden",
