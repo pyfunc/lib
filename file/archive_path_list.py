@@ -8,23 +8,25 @@ def archive_path_list(filename, extension, paths):
     if extension not in ['tar', 'zip']:
         raise ValueError('Invalid extension! Accepted values: tar, zip')
 
+    archive_name = f'{filename}.{extension}'
+
     try:
-        archive_name = f'{filename}.{extension}'
-
         with tempfile.TemporaryDirectory() as tmpdir:
-
-            # Copy each directory to the temporary directory
             for path in paths:
-                if os.path.isdir(path):  # Check whether the path is a directory
-                    # Recursively copy the directory to the temporary directory
-                    shutil.copytree(path, os.path.join(tmpdir, os.path.basename(path)))
-                else:
-                    print(f'{path} is not a directory. Skipping...')
+                if os.path.isdir(path):
+                    dst = os.path.join(tmpdir, os.path.basename(path))
+                    os.makedirs(dst, exist_ok=True)
+                    for item in os.listdir(path):
+                        s = os.path.join(path, item)
+                        d = os.path.join(dst, item)
+                        if os.path.isdir(s):
+                            shutil.copytree(s, d)
+                        else:
+                            shutil.copy2(s, d)
 
-            # Make archive
             shutil.make_archive(filename, extension, tmpdir)
 
-            print(f'Archive {archive_name} created successfully!')
+        print(f'Archive {archive_name} created successfully!')
 
     except Exception as e:
         print(f'An error occurred while archiving: {e}')
