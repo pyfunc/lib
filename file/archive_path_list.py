@@ -4,32 +4,31 @@ import shutil
 import tempfile
 
 
-def archive_path_list(filename, extension, paths):
+def archive_path_list(filename, extension, paths_dict, archive_path="./"):
     if extension not in ['tar', 'zip']:
         raise ValueError('Invalid extension! Accepted values: tar, zip')
 
     archive_name = f'{filename}.{extension}'
+    full_archive_path = os.path.join(archive_path, archive_name)
 
     try:
         with tempfile.TemporaryDirectory() as tmpdir:
-            for path in paths:
+            for path, archive_dir in paths_dict.items():
                 if os.path.isdir(path):
-                    dst = os.path.join(tmpdir, os.path.basename(path))
-                    os.makedirs(dst, exist_ok=True)
-                    for item in os.listdir(path):
-                        s = os.path.join(path, item)
-                        d = os.path.join(dst, item)
-                        if os.path.isdir(s):
-                            shutil.copytree(s, d)
-                        else:
-                            shutil.copy2(s, d)
+                    dst = os.path.join(tmpdir, archive_dir)
+                    shutil.copytree(path, dst, dirs_exist_ok=True)
+                else:
+                    print(f'{path} is not a directory. Skipping...')
 
             shutil.make_archive(filename, extension, tmpdir)
+        # Move the archive to the desired location
+        shutil.move(archive_name, full_archive_path)
 
-        print(f'Archive {archive_name} created successfully!')
+        print(f'Archive {full_archive_path} created successfully!')
 
     except Exception as e:
         print(f'An error occurred while archiving: {e}')
+
 
 """
 # Example usage    
