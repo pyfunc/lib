@@ -77,7 +77,7 @@ def get_date_from_pdf(file_path,
             print("get_date_from_pdf pattern_clean: ", pattern_clean)
             continue
         # text = re.sub('\W+', '', text)
-        print(text)
+        #print(text)
 
         # print(match)
         # date = datetime.strptime(match.group(), '%Y-%m-%d').date()
@@ -86,7 +86,7 @@ def get_date_from_pdf(file_path,
         for pattern in pattern_input_list:
 
             matches = re.findall(pattern[0], text)
-            print("matches: ", matches, len(matches))
+            #print("matches: ", matches, len(matches))
             if len(matches):
                 for match in matches:
 

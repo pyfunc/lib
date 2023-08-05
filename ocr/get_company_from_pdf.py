@@ -84,7 +84,7 @@ def get_company_from_pdf(file_path,
         print(text)
         company_list_out = find_company(text, company_list)
 
-    print("company_list_out: ", company_list_out)
+    #print("company_list_out: ", company_list_out)
 
     #exit()
 
@@ -96,15 +96,16 @@ def find_company(text="", company_list=[], company_list_out=[]):
     for company in company_list:
 
         matches = text.find(company)
-        print(company, matches, len(text))
+        #print(company, matches, len(text))
         if matches >= 0:
             #company_list_out.append(company)
+            print(company, matches, len(text))
             company_occ_list[company] = matches
 
     sorted(company_occ_list)
-    print("company_occ_list: ", company_occ_list)
+    #print("company_occ_list: ", company_occ_list)
     company_list_out = list(company_occ_list.keys())
-    print("company_list_out: ", company_list_out)
+    #print("company_list_out: ", company_list_out)
     return company_list_out
 
 

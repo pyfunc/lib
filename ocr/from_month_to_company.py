@@ -40,7 +40,7 @@ def from_month_to_company(source="./", company_list=[""], extension_list=['.pdf'
                         if len(invoice_company):
                             print("from_month_to_company invoice_company: ", invoice_company)
 
-                            path_folder = os.path.join(source, str(invoice_company[0]), )
+                            path_folder = os.path.join(source, str(invoice_company[0]))
                             # print("from_month_to_company path_folder: ", path_folder)
                             # exit()
 
