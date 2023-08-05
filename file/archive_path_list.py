@@ -1,4 +1,6 @@
-# write a python script with a function name: "archive_path_list" and parameters: filename for archive, extension for archive, list of paths to archive in selected type of archive
+# a python script with a function name: "archive_path_list" and parameters:
+# filename for archive, extension for archive, list of paths to archive in selected type of archive
+
 import os
 import shutil
 import tempfile
@@ -24,7 +26,7 @@ def archive_path_list(filename, extension, paths_dict, archive_path="./"):
         # Move the archive to the desired location
         shutil.move(archive_name, full_archive_path)
 
-        print(f'Archive {full_archive_path} created successfully!')
+        return f'Archive {full_archive_path} created successfully!'
 
     except Exception as e:
         print(f'An error occurred while archiving: {e}')
