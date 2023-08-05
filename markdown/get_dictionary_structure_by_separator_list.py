@@ -10,16 +10,13 @@ from pyfunc.markdown.get_header_list import get_header_list
 # markdown_file
 # source - path to source folder
 # pattern - regular expression pattern for Markdown headers
-def get_dictionary_structure_from_headers_content(markdown_file="", separator_list=['# ', '## ']):
-    with open(markdown_file, 'r') as file:
-        lines = file.readlines()
-
+def get_dictionary_structure_by_separator_list2(markdown_lines = [], separator_list=['```bash', '```']):
     data = {}
     current_section = None
 
     h1 = separator_list[0]
     h2 = separator_list[1]
-    for line in lines:
+    for line in markdown_lines:
         if line.startswith(h1):
             current_section = line.strip().replace(h1, "")
             data[current_section] = ""
@@ -30,3 +27,15 @@ def get_dictionary_structure_from_headers_content(markdown_file="", separator_li
             data[current_section] += line
 
     return data
+
+def get_dictionary_structure_by_separator_list(markdown = "", separator_list=['```bash', '```']):
+
+    pattern = re.compile(r'`{3}.*?`{3}|`.*?`', re.DOTALL)
+    code_blocks = pattern.findall(markdown)
+
+    # remove back ticks
+    code_blocks = [block.replace('`', '') for block in code_blocks]
+
+    return code_blocks
+
+
