@@ -17,12 +17,11 @@ def create_dir_structure_from_headers(markdown_file="",
         markdown = file.read()
 
     for header in get_header_list(markdown, pattern_list[0]):
-        urls = [header]
-        print(urls)
+        #print(header)
         #exit()
         for url in get_url_list(header, pattern_list[1]):
             path_folder = os.path.join(path, str(url))
-            print(path_folder)
+            #print(path_folder)
             #exit()
             if not os.path.exists(path_folder):
                 os.makedirs(path_folder)
