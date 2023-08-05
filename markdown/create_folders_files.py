@@ -52,7 +52,7 @@ def create_folders_files(markdown_file="",
 
                 code_blocks = get_dictionary_structure_by_separator_list(content)
                 for i, block in enumerate(code_blocks, 1):
-                    #print(f"Code Block {i}:\n{block}\n")
+                    # print(f"Code Block {i}:\n{block}\n")
                     extension = block.splitlines(True)[0]
                     if len(extension) < 1:
                         extension = "txt"
@@ -63,16 +63,20 @@ def create_folders_files(markdown_file="",
                             if code in extension_list:
                                 extension = code
                                 postString = block.split("\n", 1)[1]
-                                block = extension_head_list[code] + '\n' + postString
+                                block = ""
+                                if extension in extension_head_list.keys():
+                                    block = extension_head_list[code] + '\n'
+                                block = block + postString
+
                             else:
                                 extension = "txt"
                         else:
                             extension = "txt"
 
-                    path_file = os.path.join(path_folder, "CODE" + str(i) + '.' + extension)
-                    f = open(path_file, "w")
-                    f.write(block)
-                    f.close()
+                path_file = os.path.join(path_folder, "CODE" + str(i) + '.' + extension)
+                f = open(path_file, "w")
+                f.write(block)
+                f.close()
 
 
             except Exception as e:
