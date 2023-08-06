@@ -9,11 +9,22 @@ from pyfunc.markdown.get_dictionary_structure_from_headers_content import get_di
 from pyfunc.markdown.get_dictionary_structure_by_separator_list import get_dictionary_structure_by_separator_list
 
 
-def get_code_extension_dict(content, extension_list, extension_head_list, result_list=[]):
+def get_code_extension_dict(
+        content,
+        extension_list=['bash', 'php', 'js', 'javascript', 'shell', 'sh', 'python'],
+        extension_head_list={
+            'bash': '#!/bin/bash',
+            'shell': '#!/bin/shell',
+            'sh': '#!/bin/sh',
+            'php': '<?php',
+            'python': '#!/bin/python'
+        },
+        result_list=[]
+):
     code_blocks = get_dictionary_structure_by_separator_list(content)
 
     for i, block in enumerate(code_blocks, 1):
-        #print(f"Code Block {i}:\n{block}\n")
+        # print(f"Code Block {i}:\n{block}\n")
         extension = "txt"
         result = block
         # if block.splitlines(True)[0]:
@@ -21,14 +32,14 @@ def get_code_extension_dict(content, extension_list, extension_head_list, result
         first_line = first_line.replace('\n', '')
         filename = str(i)
         if len(first_line) >= 1:
-            #result = ""
+            # result = ""
             code_list = first_line.split(' ')
-            #print(code_list)
+            # print(code_list)
             if len(code_list) >= 1:
                 language = re.sub('[^A-Za-z0-9]+', '', first_line)
                 # print(first_line)
-                #print(language)
-                #print(block)
+                # print(language)
+                # print(block)
                 # exit()
                 if language in extension_list:
                     extension = language
@@ -37,7 +48,8 @@ def get_code_extension_dict(content, extension_list, extension_head_list, result
                     # continue
 
                     # first line second part is filename, if not empty save to variable
-                    if (len(first_line) > len(language)) and (len(first_line.split(language)) > 0) and (first_line.split(language)[1]):
+                    if (len(first_line) > len(language)) and (len(first_line.split(language)) > 0) and (
+                            first_line.split(language)[1]):
                         filename = first_line.split(language)[1]
 
                     post = block.split("\n", 1)[1]
