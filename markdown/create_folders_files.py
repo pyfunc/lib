@@ -7,6 +7,7 @@ sys.path.append('../')
 from pyfunc.markdown.get_url_list import get_url_list
 from pyfunc.markdown.get_dictionary_structure_from_headers_content import get_dictionary_structure_from_headers_content
 from pyfunc.markdown.get_dictionary_structure_by_separator_list import get_dictionary_structure_by_separator_list
+from pyfunc.markdown.get_code_extension_dict import get_code_extension_dict
 
 
 # markdown_file
@@ -50,35 +51,24 @@ def create_folders_files(markdown_file="",
                 f.write(content)
                 f.close()
 
-                code_blocks = get_dictionary_structure_by_separator_list(content)
-                for i, block in enumerate(code_blocks, 1):
-                    # print(f"Code Block {i}:\n{block}\n")
-                    extension = block.splitlines(True)[0]
-                    if len(extension) < 1:
-                        extension = "txt"
-                    else:
-                        code_list = extension.split(' ')
-                        if len(code_list) >= 1:
-                            code = re.sub('[^A-Za-z0-9]+', '', code_list[0])
-                            if code in extension_list:
-                                extension = code
-                                postString = block.split("\n", 1)[1]
-                                block = ""
-                                if extension in extension_head_list.keys():
-                                    block = extension_head_list[code] + '\n'
-                                block = block + postString
+                result_list = get_code_extension_dict(content, extension_list, extension_head_list)
+                # print(result_list)
 
-                            else:
-                                extension = "txt"
-                        else:
-                            extension = "txt"
-
-                path_file = os.path.join(path_folder, "CODE" + str(i) + '.' + extension)
-                f = open(path_file, "w")
-                f.write(block)
-                f.close()
+                for item in result_list:
+                    #print(item)
+                    extension = item['extension']
+                    filename = item['filename']
+                    code = item['code']
+                    print(extension, filename, code)
+                    # print(item['code'])
+                    path_file = os.path.join(path_folder, filename + '.' + extension)
+                    f = open(path_file, "w")
+                    f.write(code)
+                    f.close()
 
 
             except Exception as e:
                 print(e)
                 continue
+
+
