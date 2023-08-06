@@ -30,11 +30,14 @@ def get_dictionary_structure_by_separator_list2(markdown_lines = [], separator_l
 
 def get_dictionary_structure_by_separator_list(markdown = "", separator_list=['```bash', '```']):
 
-    pattern = re.compile(r'`{3}.*?`{3}|`.*?`', re.DOTALL)
+    pattern = re.compile(r'`{3}.*?`{3}|```.*?```', re.DOTALL)
+    #pattern = re.compile(r'`{3}.*?`{3}|`.*?`')
     code_blocks = pattern.findall(markdown)
 
     # remove back ticks
     code_blocks = [block.replace('`', '') for block in code_blocks]
+    #print(code_blocks)
+    #exit()
 
     return code_blocks
 

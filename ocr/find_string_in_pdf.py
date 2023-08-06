@@ -1,62 +1,28 @@
-# import PyPDF2
-from pdfreader import SimplePDFViewer
-# python -m pip install pdfreader
 import datefinder
 # https://pypi.org/project/datefinder/
 import re
 import numpy as np
 from datetime import datetime
-
-# Install:
-# python -m pip install pdfreader
-# python -m pip install datefinder
+import sys
+sys.path.append('../')
+from pyfunc.ocr.convert_pdf_to_string import convert_pdf_to_string
+from pyfunc.text.remove_extra_spaces import remove_extra_spaces
+from pyfunc.text.remove_all_spaces import remove_all_spaces
+from pyfunc.text.remove_new_lines import remove_new_lines
+from pyfunc.text.remove_only_single_spaces import remove_only_single_spaces
+from pyfunc.text.multiple_search import multiple_search
 
 # format
 # Extracting a date from a PDF invoice file involves several steps, namely 1) reading the PDF file, 2) extracting the text data from the file, and 3) searching the text for dates, which can appear in a variety of formats. In this case, we will be using the PyPDF2 module to read the PDF and the datefinder module to identify dates within the text.
 
 import dateutil.parser as dparser
 
-import sys
-from pypdf import PdfReader
-
-
-# pip3 install pypdf
-
-def convertPdf2String(path):
-    # load PDF file
-    reader = PdfReader(path)
-    number_of_pages = len(reader.pages)
-    page = reader.pages[0]
-    text = page.extract_text()
-    return text
-
-
-# https://dateutil.readthedocs.io/en/stable/parser.html
-# pip install python-dateutil
-def remove_extra_spaces(text):
-    no_extra_spaces_text = ' '.join(text.split())
-    return no_extra_spaces_text
-
-
-def remove_all_spaces(text):
-    no_spaces_text = text.replace(" ", "")
-    return no_spaces_text
-
-
-def remove_only_single_spaces(text):
-    return re.sub(r'(?<=\S) (?=\S)', '', text)
-
-
-def remove_new_lines(text):
-    text_out = text.replace("\n", "")
-    return text_out
-
 
 def find_string_in_pdf(file_path, find_text="", find_text_list=[]):
     fd = open(file_path, "rb")
 
     # text = convertPdf2String(fd).encode("ascii", "xmlcharrefreplace")
-    text = convertPdf2String(fd)
+    text = convert_pdf_to_string(fd)
     text = text.lower()
     text = remove_new_lines(text)
 
@@ -83,25 +49,3 @@ def find_string_in_pdf(file_path, find_text="", find_text_list=[]):
     return text_list_out
     # return [file_path, text_list_out]
 
-
-def multiple_search(text, search_list=[], text_list_out=[]):
-    text_occ_list = {}
-    # print(search_list)
-
-    for search in search_list:
-
-        matches = text.find(search)
-        # print(text, search, matches, len(search))
-        # print(search, matches, len(search))
-
-        if matches >= 0:
-            # text_list_out.append(text)
-            text_occ_list[search] = matches
-
-    sorted(text_occ_list)
-    # print("text_occ_list: ", text_occ_list)
-    text_list_out = list(text_occ_list.keys())
-
-    # print("text_list_out: ", text_list_out)
-
-    return text_list_out
