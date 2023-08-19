@@ -36,7 +36,6 @@ def archive_path_list(filename, extension, paths_dict, archive_path="./"):
 # Example usage    
 paths_to_archive = ['/path/to/file1', '/path/to/file2', '/path/to/directory']
 archive_path_list('archive_name', 'zip', paths_to_archive)
-```
 
 This function will create a archive with the given filename and extension, and it will contain all the files/d
 
