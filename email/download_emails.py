@@ -1,14 +1,15 @@
 import sys
+
 sys.path.append('../')
 import os
 import logging
 import imaplib
+import datetime
 import email
 from pyfunc.email.download_attachments_in_email import download_attachments_in_email
-from pyfunc.email.download_all_attachments_in_inbox import download_all_attachments_in_inbox
 
 
-def download_emails(server, user, password, local_folder, remote_folder="inbox", limit=0):
+def download_emails(server, user, password, local_folder, remote_folder="inbox", limit=50, days=60):
     logging.basicConfig(level=logging.DEBUG)
     try:
         m = imaplib.IMAP4_SSL(server)
@@ -37,15 +38,29 @@ def download_emails(server, user, password, local_folder, remote_folder="inbox",
     print("data:", data)
     # m.select("pay")
     # response, items = m.search(None, "(ALL)")
-    response, items = m.search(None, 'ALL')
+    # response, items = m.search(None, 'ALL')
+
+    # date_to = datetime.date.today().month
+    todays = datetime.date.today()
+    date_to = datetime.datetime(todays.year, todays.month, 1).strftime("%d-%b-%Y")
+    date_from = datetime.datetime(todays.year, todays.month - 1, 1).strftime("%d-%b-%Y")
+    # date_from = (datetime.date.today() - datetime.timedelta(days)).strftime("%d-%b-%Y")
+    print("date_from:", date_from)
+    print("date_to:", date_to)
+    # exit()
+
+    # response, items = m.search(None, 'ALL', f'(SENTSINCE {datesince})')
+    response, items = m.search(None, f'(SINCE "{date_from}")')
+    #response, items = m.search(None, f'(SINCE "{date_from}" BEFORE "{date_from}")')
     print("response search:", response)
 
     xx = 0
     items = items[0].split()
     for emailid in items:
-        download_attachments_in_email(m, emailid, local_folder, xx)
-        print(emailid, local_folder)
+        resp, data = m.fetch(emailid, '(RFC822)')
+        download_attachments_in_email(resp, data, emailid, local_folder)
+        # print(emailid, local_folder)
         xx = xx + 1
         if limit > 0:
-            if xx > 40:
+            if xx > limit:
                 exit()

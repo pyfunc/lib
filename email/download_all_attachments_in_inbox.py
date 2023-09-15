@@ -28,7 +28,8 @@ def get_newest_messages(m, messages, outputdir="", limit=999999, xx=1):
     messages = int(messages[0])
     print("get_newest_messages messages:", messages)
     for emailid in range(messages, messages - limit, -1):
-        download_attachments_in_email(m, emailid, outputdir)
+        resp, data = m.fetch(str(emailid), "(BODY.PEEK[])")
+        download_attachments_in_email(resp, data, emailid, outputdir)
         print(emailid, outputdir)
         xx = xx + 1
 
