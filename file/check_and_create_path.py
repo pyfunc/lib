@@ -1,15 +1,15 @@
 import os
 from pathlib import Path
 
+
 def check_and_create_path(dest_path):
-    dirname, fname = os.path.split(dest_path)
     # print(dirname)
     # print(fname)
-    path = Path(dirname)
+    path = Path(dest_path)
     if not os.path.exists(str(path)):
         try:
             path.mkdir(parents=False, exist_ok=False)
         except FileExistsError:
-            print(f'check_and_create_path exist: {dirname}')
+            print(f'check_and_create_path exist: {dest_path}')
         else:
-            print(f'check_and_create_path created: {dirname}')
+            print(f'check_and_create_path created: {dest_path}')

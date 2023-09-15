@@ -24,7 +24,7 @@ def find_string_in_file_path(paths, find_text, extension_list=['.pdf']):
                     # timestamp = os.path.getmtime(source_name)
                     try:
                         found_text = find_string_in_pdf(path_in, find_text)
-                        print("path_in name found_text : ", path_in, len(found_text))
+                        #print("path_in name found_text : ", path_in, len(found_text))
 
                         if len(found_text) > 0:
                             #print("from_folder_to_year found_text: ", found_text, len(found_text))

@@ -9,7 +9,8 @@ import email
 from pyfunc.email.download_attachments_in_email import download_attachments_in_email
 
 
-def download_emails(server, user, password, local_folder, remote_folder="inbox", limit=50, days=60):
+def download_emails(server, user, password, local_folder, remote_folder="inbox", limit=50, days=60, select_month=0,
+                    year=0):
     logging.basicConfig(level=logging.DEBUG)
     try:
         m = imaplib.IMAP4_SSL(server)
@@ -38,21 +39,30 @@ def download_emails(server, user, password, local_folder, remote_folder="inbox",
     print("data:", data)
     # m.select("pay")
     # response, items = m.search(None, "(ALL)")
-    # response, items = m.search(None, 'ALL')
 
     # date_to = datetime.date.today().month
-    todays = datetime.date.today()
-    date_to = datetime.datetime(todays.year, todays.month, 1).strftime("%d-%b-%Y")
-    date_from = datetime.datetime(todays.year, todays.month - 1, 1).strftime("%d-%b-%Y")
-    # date_from = (datetime.date.today() - datetime.timedelta(days)).strftime("%d-%b-%Y")
-    print("date_from:", date_from)
-    print("date_to:", date_to)
-    # exit()
+    if year == 0:
+        year = datetime.date.today().year
 
-    # response, items = m.search(None, 'ALL', f'(SENTSINCE {datesince})')
-    response, items = m.search(None, f'(SINCE "{date_from}")')
-    #response, items = m.search(None, f'(SINCE "{date_from}" BEFORE "{date_from}")')
-    print("response search:", response)
+    if select_month > 0 and select_month < 13:
+        year_from = year
+        date_from_month = select_month - 1
+        if select_month < 2:
+            year_from = year - 1
+            date_from_month = 12
+
+        date_to = datetime.datetime(year, select_month, 1).strftime("%d-%b-%Y")
+        date_from = datetime.datetime(year_from, date_from_month, 1).strftime("%d-%b-%Y")
+        # date_from = (datetime.date.today() - datetime.timedelta(days)).strftime("%d-%b-%Y")
+        print("date_from:", date_from)
+        print("date_to:", date_to)
+        # exit()
+        # response, items = m.search(None, 'ALL', f'(SENTSINCE {datesince})')
+        # response, items = m.search(None, f'(SINCE "{date_from}")')
+        response, items = m.search(None, f'(SINCE "{date_from}" BEFORE "{date_to}")')
+        print("response search:", response)
+    else:
+        response, items = m.search(None, 'ALL')
 
     xx = 0
     items = items[0].split()
