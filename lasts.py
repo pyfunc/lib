@@ -9,8 +9,9 @@ from pyfunc.config.ftp_update import ftp_update
 # print(*files, sep="\n")
 
 def lasts(image_path, limit=3, emails=[], ftps=[], storage_root=""):
-    # email_brama()
-    # email_office()
+    #email_brama()
+    #email_office()
+
     email_update(emails, storage_root, limit)
     # ftp_update(ftps, storage_root, limit)
     images = file_list(image_path)
