@@ -12,7 +12,7 @@ import magic
 
 # pip install python-magic
 
-def download_attachments_in_email(resp, data, emailid="", outputdir="", xx=0, limit=40,
+def download_attachments_in_email(resp, data, emailid="", outputdir="", xx=0,
                                   attachements=["pdf", "jpg", "gif", "png"]):
     # m.store(emailid, '+FLAGS', '\Seen')
     # print("download_attachments_in_email emailid:", emailid)
@@ -64,9 +64,8 @@ def download_attachments_in_email(resp, data, emailid="", outputdir="", xx=0, li
                     # part = MIMEImage(
                     #    content
                     # )
-                    #print(type, extension)
+                    # print(type, extension)
                     # exit()
-
 
                     if extension in attachements:
                         subfolder = ""
@@ -74,7 +73,8 @@ def download_attachments_in_email(resp, data, emailid="", outputdir="", xx=0, li
                             subfolder = f'/{extension}/'
                             check_and_create_path(outputdir + subfolder)
 
-                        open(outputdir + subfolder + filename + "." + extension, 'wb').write(part.get_payload(decode=True))
+                        open(outputdir + subfolder + filename + "." + extension, 'wb').write(
+                            part.get_payload(decode=True))
                     # open(outputdir + filename + ".html", 'wb').write()
 
             except FileNotFoundError as ex:

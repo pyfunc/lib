@@ -9,8 +9,7 @@ import email
 from pyfunc.email.download_attachments_in_email import download_attachments_in_email
 
 
-def download_emails(server, user, password, local_folder, remote_folder="inbox", limit=50, days=60, select_month=0,
-                    year=0):
+def download_emails(server, user, password, local_folder, remote_folder="inbox", limit=50, select_month=0, year=0):
     logging.basicConfig(level=logging.DEBUG)
     try:
         m = imaplib.IMAP4_SSL(server)
@@ -69,6 +68,7 @@ def download_emails(server, user, password, local_folder, remote_folder="inbox",
     for emailid in items:
         resp, data = m.fetch(emailid, '(RFC822)')
         download_attachments_in_email(resp, data, emailid, local_folder)
+
         # print(emailid, local_folder)
         xx = xx + 1
         if limit > 0:
