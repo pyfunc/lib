@@ -1,10 +1,15 @@
 import os
+import sys
+
+sys.path.append('../')
 import io
 import shutil
 import base64
 from pdf2image import convert_from_path
 from wand.image import Image
 from io import BytesIO
+
+from pyfunc.file.convert_pdf_to_base64 import convert_pdf_to_base64
 from pyfunc.file.get_filename_from_path import get_filename_from_path
 from pyfunc.file.check_and_create_path import check_and_create_path
 from pyfunc.ocr.get_company_from_pdf import get_company_from_pdf
@@ -43,38 +48,7 @@ def sum_year_from_path_to_file(year, filename, extension, paths_dict, path_out="
         print(f'An error occurred while converting: {e}')
 
 
-def convert_pdf_to_file(pdf_path, extension="png", dpi=70, path_out="./report/2023/img/"):
-    check_and_create_path(path_out)
-    images = convert_from_path(pdf_path, dpi, path_out, fmt=extension, single_file=True,
-                               output_file=get_filename_from_path(pdf_path))
 
-    print(images)
-    img = images[0]
-    in_mem_file = io.BytesIO()
-    img.save(in_mem_file, format="PNG")
-    # reset file pointer to start
-    in_mem_file.seek(0)
-    img_bytes = in_mem_file.read()
-
-    base64_encoded_result_bytes = base64.b64encode(img_bytes)
-    base64_encoded_result_str = base64_encoded_result_bytes.decode('ascii')
-
-    return base64_encoded_result_str
-
-
-def convert_pdf_to_base64(pdf_path, extension="png", dpi=60, path_out="./report/img"):
-    images = convert_from_path(pdf_path, dpi, path_out, fmt=extension, single_file=True,
-                               output_file=get_filename_from_path(pdf_path))
-    # print(images)
-    # exit()
-    first_page = images[0]
-
-    with BytesIO() as output:
-        # get image content and encode to base64
-        img_content = output.getvalue()
-        base64_img = base64.b64encode(img_content)
-
-    return base64_img.decode('utf-8')
 
 
 def scan_recursive(path, extension_list=['.pdf'], path_out="./report/2023/img/"):
@@ -115,7 +89,7 @@ def scan_recursive(path, extension_list=['.pdf'], path_out="./report/2023/img/")
 
                     # icon of pdf
                     base64_icon = ""
-                    base64_icon = convert_pdf_to_file(file_path, path_out)
+                    base64_icon = convert_pdf_to_base64(file_path, path_out)
                     dict_data['image'] = base64_icon
 
                     # get price to file *.pdf.price
