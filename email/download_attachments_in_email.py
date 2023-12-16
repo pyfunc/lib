@@ -1,3 +1,4 @@
+import base64
 import os
 import email
 from email.mime.multipart import MIMEMultipart
@@ -57,13 +58,25 @@ def download_attachments_in_email(resp, data, emailid="", outputdir="", xx=0,
                         open(outputdir + subfolder + part.get_filename(), 'wb').write(part.get_payload(decode=True))
                     # print(part.get_filename())
                 else:
-                    content = part.get_payload(decode=True)
-                    mime = magic.Magic(mime=True)
-                    type = mime.from_buffer(content)
-                    extension = type.split("/")[1]
-                    # part = MIMEImage(
-                    #    content
-                    # )
+                    try:
+                        content = part.get_payload(decode=True)
+                        mime = magic.Magic(mime=True)
+                        type = mime.from_file(content)
+                        extension = type.split("/")[1]
+                    except:
+                        extension = ""
+                        ## check if content is encoded base64
+                        try:
+                            # get mime type from content
+                            type = part.get_content_type()
+                            extension = type.split("/")[1]
+                        except:
+                            extension = ""
+
+                        #print(type)
+                        #print(content)
+                        #print(extension)
+                        #exit()
                     # print(type, extension)
                     # exit()
 
@@ -84,7 +97,7 @@ def download_attachments_in_email(resp, data, emailid="", outputdir="", xx=0,
 
                 content = part.get_payload(decode=True)
                 mime = magic.Magic(mime=True)
-                type = mime.from_buffer(content)
+                type = mime.from_file(content)
                 extension = type.split("/")[1]
 
                 subfolder = ""
