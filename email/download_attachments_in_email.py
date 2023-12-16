@@ -8,8 +8,6 @@ from pyfunc.file.check_and_create_path import check_and_create_path
 
 from types import NoneType
 
-import magic
-
 
 # pip install python-magic
 
@@ -59,19 +57,12 @@ def download_attachments_in_email(resp, data, emailid="", outputdir="", xx=0,
                     # print(part.get_filename())
                 else:
                     try:
-                        content = part.get_payload(decode=True)
-                        mime = magic.Magic(mime=True)
-                        type = mime.from_file(content)
+                        #content = part.get_payload(decode=True)
+                        # get mime type from content
+                        type = part.get_content_type()
                         extension = type.split("/")[1]
                     except:
                         extension = ""
-                        ## check if content is encoded base64
-                        try:
-                            # get mime type from content
-                            type = part.get_content_type()
-                            extension = type.split("/")[1]
-                        except:
-                            extension = ""
 
                         #print(type)
                         #print(content)
@@ -95,9 +86,10 @@ def download_attachments_in_email(resp, data, emailid="", outputdir="", xx=0,
                     if character.isalnum():
                         filename += character
 
-                content = part.get_payload(decode=True)
-                mime = magic.Magic(mime=True)
-                type = mime.from_file(content)
+                #content = part.get_payload(decode=True)
+                #mime = magic.Magic(mime=True)
+                #type = mime.from_file(content)
+                type = part.get_content_type()
                 extension = type.split("/")[1]
 
                 subfolder = ""
