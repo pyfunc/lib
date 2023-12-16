@@ -72,6 +72,7 @@ def get_company_from_pdf(file_path,
             else:
                 text = re.sub(pattern_clean, '', text)
             # text = re.sub('\W+', '', text)
+            text = text.replace(' ', '_')
 
     #print(text)
     # exit()

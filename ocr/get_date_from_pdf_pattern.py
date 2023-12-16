@@ -7,8 +7,9 @@ class get_date_from_pdf_pattern():
 
     pattern_input_list = [
         #[r'\d{2}\.\d{2}\.\d{4}'],
-        [r'date (\d{2}\.\d{2}\.\d{4})'],
-        [r'\d{4}\.\d{2}\.\d{2}'],
+        [r'date (\d{2}\.\d{2}\.\d{4})', '%d.%m.%Y'],
+        [r'datum (\d{2}\.\d{2}\.\d{4})', '%d.%m.%Y'],
+        [r'\d{4}\.\d{2}\.\d{2}', '%Y.%m.%d'],
         [r'\d{4}-\d{2}-\d{2}', '%Y-%m-%d'],
         [r'\d{2}-\d{2}-\d{4}', '%d-%m-%Y'],
         [r'Order Date (\d{1,2}\/\d{1,2}\/\d{4})', '%m/%d/%Y'],
