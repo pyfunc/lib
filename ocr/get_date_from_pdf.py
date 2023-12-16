@@ -92,7 +92,7 @@ def get_date_from_pdf(file_path,
 
                     print(pattern[0])
                     datestr = str(match)
-                    print(datestr)
+                    print('datestr', datestr)
                     # exit()
 
                     # date_format='%b%d%Y'
@@ -109,7 +109,8 @@ def get_date_from_pdf(file_path,
                             dates = datetime.strptime(datestr, pattern[1])
                     else:
                         dates = dparser.parse(datestr, fuzzy=True)
-                    print(dates)
+                    print('dates', dates)
+
                     # exit()
 
                     out_by_format_list = []

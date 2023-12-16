@@ -1,5 +1,5 @@
 class get_date_from_pdf_pattern():
-    format_out_list = ['%Y', '%m.%Y']
+    format_out_list = ['%Y', '%m.%Y', '%Y.%m', '%Y-%m']
 
     pattern_clean_list = ['[^A-Za-z0-9 .\-\/]+', 'remove_all_spaces']
 
@@ -7,6 +7,7 @@ class get_date_from_pdf_pattern():
 
     pattern_input_list = [
         #[r'\d{2}\.\d{2}\.\d{4}'],
+        [r'date (\d{2}\.\d{2}\.\d{4})'],
         [r'\d{4}\.\d{2}\.\d{2}'],
         [r'\d{4}-\d{2}-\d{2}', '%Y-%m-%d'],
         [r'\d{2}-\d{2}-\d{4}', '%d-%m-%Y'],
