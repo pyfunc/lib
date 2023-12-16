@@ -13,6 +13,12 @@ from pyfunc.ocr.get_company_from_pdf import get_company_from_pdf
 
 # move from IN to selected month
 def from_month_to_company(source="./", company_list=[""], extension_list=['.pdf']):
+    """
+    move from IN to selected month
+    :param source: source folder
+    :param company_list: list of companies
+    :param extension_list: list of file extensions
+    """
     # print(source, dest)
     root = '../'
     # path = os.path.join(root, source)

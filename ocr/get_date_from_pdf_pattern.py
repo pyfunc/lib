@@ -6,7 +6,7 @@ class get_date_from_pdf_pattern():
     ##def pattern_clean_list = ['[^A-Za-z0-9 .-]+', '[^A-Za-z0-9.-]+'],
 
     pattern_input_list = [
-        [r'\d{2}\.\d{2}\.\d{4}'],
+        #[r'\d{2}\.\d{2}\.\d{4}'],
         [r'\d{4}\.\d{2}\.\d{2}'],
         [r'\d{4}-\d{2}-\d{2}', '%Y-%m-%d'],
         [r'\d{2}-\d{2}-\d{4}', '%d-%m-%Y'],
