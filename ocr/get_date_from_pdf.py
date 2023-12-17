@@ -5,6 +5,7 @@ import datefinder
 # https://pypi.org/project/datefinder/
 import re
 from datetime import datetime
+import locale
 
 # Install:
 # python -m pip install pdfreader
@@ -49,7 +50,16 @@ def remove_only_single_spaces(text):
 def get_date_from_pdf(file_path,
                       format_out_list=['%Y'],
                       pattern_clean_list='[^A-Za-z0-9 .-]+',
-                      pattern_input_list=[r'\d{2}\.\d{2}\.\d{4}']):
+                      pattern_input_list=[r'\d{2}\.\d{2}\.\d{4}'],
+                      local_format_list=[]
+                      ):
+    if not len(local_format_list):
+        # Get the default locale settings
+        default_locale = locale.getlocale()[0]
+        # Print the default locale settings for English
+        # print('default_locale', default_locale)
+        local_format_list.append(default_locale)
+
     fd = open(file_path, "rb")
     # viewer = SimplePDFViewer(fd)
     # viewer.render()
@@ -77,7 +87,7 @@ def get_date_from_pdf(file_path,
             print("get_date_from_pdf pattern_clean: ", pattern_clean)
             continue
         # text = re.sub('\W+', '', text)
-        #print(text)
+        # print(text)
 
         # print(match)
         # date = datetime.strptime(match.group(), '%Y-%m-%d').date()
@@ -85,41 +95,60 @@ def get_date_from_pdf(file_path,
 
         for pattern in pattern_input_list:
 
+            data_pattern_list = []
+            if len(pattern[1]):
+                data_pattern_list = pattern[1]
+            else:
+                data_pattern_list.append(default_locale)
+
             matches = re.findall(pattern[0], text)
-            #print("matches: ", matches, len(matches))
+            # print("matches: ", matches, len(matches))
             if len(matches):
+                out_by_format_list = []
                 for match in matches:
+                    for data_pattern in data_pattern_list:
+                        # print(pattern, pattern[0])
+                        # exit()
+                        datestr = str(match)
+                        # print('datestr', datestr)
+                        # exit()
+                        try:
 
-                    print(pattern[0])
-                    datestr = str(match)
-                    # print('datestr', datestr)
-                    # exit()
+                            # date_format='%b%d%Y'
+                            if len(pattern) > 1:
 
-                    # date_format='%b%d%Y'
-                    if len(pattern) > 1:
+                                if len(pattern) > 2:
+                                    print(pattern[2])
+                                    # Pierwsza część `(?<=\d)(st|nd|rd|th)\b` odpowiada za usuwanie 'st', 'nd', 'rd', 'th' po liczbie,
+                                    # druga część `\s` odpowiada za usuwanie spacji. Operator `|` w wyrażeniu regularnym oznacza "lub", dzięki czemu wyrażenie pasuje do dowolnej z tych dwóch części.
+                                    datestr = re.sub(data_pattern, '', datestr)
+                                    dates = datetime.strptime(datestr, pattern[2])
+                                else:
+                                    print(data_pattern)
+                                    dates = datetime.strptime(datestr, data_pattern)
+                            else:
+                                dates = dparser.parse(datestr, fuzzy=True)
+                        # print('dates', dates)
+                        except Exception as e:
+                            print("\n !!!: ", e)
+                            print("local_format_list", local_format_list)
+                            print("out_by_format_list", out_by_format_list)
+                            continue
 
-                        if len(pattern) > 2:
-                            print(pattern[2])
-                            # Pierwsza część `(?<=\d)(st|nd|rd|th)\b` odpowiada za usuwanie 'st', 'nd', 'rd', 'th' po liczbie,
-                            # druga część `\s` odpowiada za usuwanie spacji. Operator `|` w wyrażeniu regularnym oznacza "lub", dzięki czemu wyrażenie pasuje do dowolnej z tych dwóch części.
-                            datestr = re.sub(pattern[1], '', datestr)
-                            dates = datetime.strptime(datestr, pattern[2])
-                        else:
-                            print(pattern[1])
-                            dates = datetime.strptime(datestr, pattern[1])
-                    else:
-                        dates = dparser.parse(datestr, fuzzy=True)
-                    # print('dates', dates)
 
-                    # exit()
+                        # exit()
+                        # print('local_format_list', local_format_list)
+                        for local_format in local_format_list:
+                            # Set the locale to German, ...
+                            locale.setlocale(locale.LC_TIME, local_format)
+                            # print('local_format', local_format)
+                            for format_out in format_out_list:
+                                out_by_format_list.append(
+                                    dates.strftime(format_out)
+                                )
 
-                    out_by_format_list = []
-                    for format_out in format_out_list:
-                        out_by_format_list.append(
-                            dates.strftime(format_out)
-                        )
-
-                    return out_by_format_list
+                        print('out_by_format_list', out_by_format_list)
+                        return out_by_format_list
     return []
     # print()
     # current_day = datetime.now().strftime('%Y')
