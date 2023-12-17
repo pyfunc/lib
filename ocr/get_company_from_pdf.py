@@ -82,7 +82,7 @@ def get_company_from_pdf(file_path,
 
     if not company_list_out:
         text = remove_only_single_spaces(text)
-        print(text)
+        #print(text)
         company_list_out = find_company(text, company_list)
 
     #print("company_list_out: ", company_list_out)
