@@ -36,6 +36,8 @@ def download_emails(server, user, password, local_folder, remote_folder="inbox",
     # response, data = m.select('INBOX.pay')
     print("response:", response)
     print("data:", data)
+    print("select_month:", select_month)
+    print("year:", year)
     # m.select("pay")
     # response, items = m.search(None, "(ALL)")
 
@@ -43,25 +45,36 @@ def download_emails(server, user, password, local_folder, remote_folder="inbox",
     if year == 0:
         year = datetime.date.today().year
 
-    if select_month > 0 and select_month < 13:
+    if select_month == 0:
+        response, items = m.search(None, 'ALL')
+
+    if select_month > 0 and select_month < 14:
         year_from = year
+        select_year = year
         date_from_month = select_month - 1
         if select_month < 2:
             year_from = year - 1
             date_from_month = 12
+        elif select_month > 12:
+            select_year = year + 1
+            select_month = 1
 
-        date_to = datetime.datetime(year, select_month, 1).strftime("%d-%b-%Y")
+        date_to = datetime.datetime(select_year, select_month, 1).strftime("%d-%b-%Y")
         date_from = datetime.datetime(year_from, date_from_month, 1).strftime("%d-%b-%Y")
         # date_from = (datetime.date.today() - datetime.timedelta(days)).strftime("%d-%b-%Y")
-        print("date_from:", date_from)
-        print("date_to:", date_to)
-        # exit()
+        #print("select_year:", select_year)
+        #print("select_month:", select_month)
+        #print("year_from:", year_from)
+        #print("date_from_month:", date_from_month)
+        #print("date_from:", date_from)
+        #print("date_to:", date_to)
+        #exit()
         # response, items = m.search(None, 'ALL', f'(SENTSINCE {datesince})')
         # response, items = m.search(None, f'(SINCE "{date_from}")')
         response, items = m.search(None, f'(SINCE "{date_from}" BEFORE "{date_to}")')
         print("response search:", response)
     else:
-        response, items = m.search(None, 'ALL')
+        exit()
 
     xx = 0
     items = items[0].split()
