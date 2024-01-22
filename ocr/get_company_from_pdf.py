@@ -1,23 +1,14 @@
 # import PyPDF2
-from pdfreader import SimplePDFViewer
 # python -m pip install pdfreader
-import datefinder
 # https://pypi.org/project/datefinder/
 import re
-import numpy as np
-from datetime import datetime
+from pypdf import PdfReader
 
 # Install:
 # python -m pip install pdfreader
 # python -m pip install datefinder
-
 # format
 # Extracting a date from a PDF invoice file involves several steps, namely 1) reading the PDF file, 2) extracting the text data from the file, and 3) searching the text for dates, which can appear in a variety of formats. In this case, we will be using the PyPDF2 module to read the PDF and the datefinder module to identify dates within the text.
-
-import dateutil.parser as dparser
-
-import sys
-from pypdf import PdfReader
 
 
 # pip3 install pypdf

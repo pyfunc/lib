@@ -47,8 +47,7 @@ def download_emails(server, user, password, local_folder, remote_folder="inbox",
 
     if select_month == 0:
         response, items = m.search(None, 'ALL')
-
-    if select_month > 0 and select_month < 14:
+    elif select_month > 0 and select_month < 14:
         year_from = year
         select_year = year
         date_from_month = select_month - 1

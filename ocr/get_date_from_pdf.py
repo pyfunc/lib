@@ -1,7 +1,3 @@
-# import PyPDF2
-from pdfreader import SimplePDFViewer
-# python -m pip install pdfreader
-import datefinder
 # https://pypi.org/project/datefinder/
 import re
 from datetime import datetime
