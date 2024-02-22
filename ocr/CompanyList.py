@@ -1,5 +1,5 @@
 class CompanyList:
-    company_list_array = ["languagetooler", "ionos", "xolo", "netcup", "strato", "premium", "namesilo", "whmcs",
+    company_list_array = ["languagetooler", "adobe", "zoom", "ionos", "xolo", "netcup", "strato", "premium", "namesilo", "whmcs",
                           "aftermarket", "Michau", "DigitalOcean", "PERSKIMEDIA", "ICDSoft",
                           "restream", "sav", "github", "zoom", "openai", "zoho", "tuneup", "TuneUp Accounting",
                           "Envato", "dynadot", "wise", "transferwise",
