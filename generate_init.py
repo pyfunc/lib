@@ -1,11 +1,9 @@
-import toml
 import os
-
+import toml
 import argparse
-from typing import List, Tuple
-
-from path import Path
 import re
+from typing import List, Tuple
+from path import Path
 
 
 def bypyproject():
