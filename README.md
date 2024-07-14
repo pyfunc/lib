@@ -3,6 +3,7 @@
 libs for cameramonit, ocr, fin-officer, cfo, and other projects
 
 
+
 ## Install
 
 ```bash
@@ -121,3 +122,7 @@ git push
 Follow-up with the classic git branch -M main and git push -u origin main
 
 That worked for me. Hopefully for you too.
+
+## pypi publishing
+
+[Creating a PyPI Project with a Trusted Publisher - PyPI Docs](https://docs.pypi.org/trusted-publishers/creating-a-project-through-oidc/)
