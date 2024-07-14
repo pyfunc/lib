@@ -2,7 +2,7 @@ import sys
 import requests
 
 sys.path.append('../')
-from github.getHeaders import getHeaders
+from pyfunc2.github.getHeaders import getHeaders
 
 
 def update_default_branch_on_github(api_token, org_name, repo_name, branch):

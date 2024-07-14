@@ -1,23 +1,23 @@
 import os
 import sys
 
-from github.create_repo_on_not_git_repo_folder import create_repo_on_not_git_repo_folder
+from pyfunc2.github.create_repo_on_not_git_repo_folder import create_repo_on_not_git_repo_folder
 
 sys.path.append('../')
 from function.flat_array import flat_array
 
 from function.extract_domain_name_from_url import extract_domain_name_from_url
-from github.change_default_branch import change_default_branch
-from github.get_domain_from_page import get_domain_from_page
-from github.create_notexisting_folder import create_notexisting_folder
-from github.get_param_from_repo import get_param_from_repo
-from github.defaults import defaults
-from github.set_github_pages_domain import set_github_pages_domain
+from pyfunc2.github.change_default_branch import change_default_branch
+from pyfunc2.github.get_domain_from_page import get_domain_from_page
+from pyfunc2.github.create_notexisting_folder import create_notexisting_folder
+from pyfunc2.github.get_param_from_repo import get_param_from_repo
+from pyfunc2.github.defaults import defaults
+from pyfunc2.github.set_github_pages_domain import set_github_pages_domain
 from local.create_path import create_path
 from local.init_local_repo import init_local_repo
 from local.push_local_repo import push_local_repo
 from local.clone_repo import clone_repo
-from github.set_domain_on_github_org_pages import set_domain_on_github_org_pages
+from pyfunc2.github.set_domain_on_github_org_pages import set_domain_on_github_org_pages
 
 
 # url: https://developer.github.com/v3/repos/#create-a-repository

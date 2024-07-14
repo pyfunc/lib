@@ -4,7 +4,7 @@ sys.path.append('../')
 from function.extract_domain_name_from_url import extract_domain_name_from_url
 from local.clone_repo import clone_repo
 from local.create_path import create_path
-from github.defaults import defaults
+from pyfunc2.github.defaults import defaults
 
 
 # TODO: not used?

@@ -2,7 +2,7 @@ import sys
 import requests
 
 sys.path.append('../')
-from github.getHeaders import getHeaders
+from pyfunc2.github.getHeaders import getHeaders
 
 # Create a repo on GitHub
 def create_repo_on_github(api_token, org_name, repo_folder, description="This is your first repository", domain = 'legacycode.info'):

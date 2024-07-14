@@ -2,7 +2,7 @@ import sys
 import requests
 
 sys.path.append('../')
-from github.getHeaders import getHeaders
+from pyfunc2.github.getHeaders import getHeaders
 
 
 def get_repository_list_wtih_github_pages(api_token, org_name, repo_name):

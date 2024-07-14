@@ -4,8 +4,8 @@ from function.differenceElementsInArrays import differenceElementsInArrays
 from local.fromFilenametoLinesAsArray import fromFilenametoLinesAsArray
 from local.generate_template import generate_template
 from local.load_file import load_file
-from github.get_param_from_repo import get_param_from_repo
-from github.create_repo_on_github_and_local import create_repo_on_github_and_local
+from pyfunc2.github.get_param_from_repo import get_param_from_repo
+from pyfunc2.github.create_repo_on_github_and_local import create_repo_on_github_and_local
 
 
 # check the expected repository list and create if they are not existing on github organisation

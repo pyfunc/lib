@@ -2,10 +2,10 @@ import sys
 import requests
 
 sys.path.append('../')
-from github.get_repository_list_wtih_github_pages import get_repository_list_wtih_github_pages
-from github.getHeaders import getHeaders
-from github.enable_github_pages import enable_github_pages
-from github.update_github_pages import update_github_pages
+from pyfunc2.github.get_repository_list_wtih_github_pages import get_repository_list_wtih_github_pages
+from pyfunc2.github.getHeaders import getHeaders
+from pyfunc2.github.enable_github_pages import enable_github_pages
+from pyfunc2.github.update_github_pages import update_github_pages
 
 
 def set_github_pages_domain(api_token, org_name, domain, default_branch):

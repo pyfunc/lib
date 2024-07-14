@@ -5,7 +5,7 @@ from local.non_git_folders_in_path import non_git_folders_in_path
 from function.differenceElementsInArrays import differenceElementsInArrays
 from local.load_file import load_file
 from function.flat_array import flat_array
-from github.create_repo_on_github_and_local import create_repo_on_github_and_local
+from pyfunc2.github.create_repo_on_github_and_local import create_repo_on_github_and_local
 
 def create_repo_on_not_git_repo_folder(api_token, repos, org_name, local_path, domain):
     # Git not exist, check if exist the remote repo on github

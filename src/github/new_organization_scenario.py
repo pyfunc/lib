@@ -3,13 +3,13 @@ import sys
 
 sys.path.append('../')
 from function.extract_domain_name_from_url import extract_domain_name_from_url
-from github.set_github_pages_domain import set_github_pages_domain
+from pyfunc2.github.set_github_pages_domain import set_github_pages_domain
 from local.create_path import create_path
-from github.create_repo_on_not_git_repo_folder import create_repo_on_not_git_repo_folder
+from pyfunc2.github.create_repo_on_not_git_repo_folder import create_repo_on_not_git_repo_folder
 from local.init_local_repo import init_local_repo
 from local.push_local_repo import push_local_repo
-from github.defaults import defaults
-from github.create_repo_on_github_and_local import create_repo_on_github_and_local
+from pyfunc2.github.defaults import defaults
+from pyfunc2.github.create_repo_on_github_and_local import create_repo_on_github_and_local
 
 
 def new_organization_scenario(api_token, repos, org_name, repo_name, path_name):

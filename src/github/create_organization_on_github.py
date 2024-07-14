@@ -3,8 +3,8 @@ import requests
 import json
 
 sys.path.append('../')
-from github.getHeaders import getHeaders
-from github.get_owner_json import get_owner_json
+from pyfunc2.github.getHeaders import getHeaders
+from pyfunc2.github.get_owner_json import get_owner_json
 
 
 def create_organization_on_github(api_token, org_name, file_path="owner/name.json", url = "https://api.github.com/user/orgs"):

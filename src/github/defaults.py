@@ -3,7 +3,7 @@ import sys
 
 sys.path.append('../')
 from function.extract_domain_name_from_url import extract_domain_name_from_url
-from github.change_default_branch import change_default_branch
+from pyfunc2.github.change_default_branch import change_default_branch
 
 
 def defaults(domain='', repo_name='identity', homepage='', org_name=''):

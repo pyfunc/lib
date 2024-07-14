@@ -2,7 +2,7 @@ import sys
 import requests
 
 sys.path.append('../')
-from github.getHeaders import getHeaders
+from pyfunc2.github.getHeaders import getHeaders
 
 # Delete branch remote branch on github
 def delete_branch_on_github(api_token, org_name, repo_name, branch):

@@ -1,3 +1,4 @@
+
 [build-system]
 requires = [
     "hatch-vcs>=0.4",
@@ -7,8 +8,6 @@ requires = [
     "wheel ~=0.37.1",
 ]
 build-backend = "hatchling.build"
-#build-backend = "setuptools.build_meta"
-
 
 [project.urls]
 homepage = "https://www.pyfunc.com"
@@ -17,19 +16,17 @@ changelog = "https://github.com/pyfunc/lib/releases"
 wiki = "https://github.com/pyfunc/lib/wiki"
 issue = "https://github.com/pyfunc/lib/issues/new"
 
-
 [project]
 name = "pyfunc2"
 version = "0.1.8"
 #dynamic = ["dependencies"]
 #dynamic = ["version"]
 description = "libs for cameramonit, ocr, fin-officer, cfo, and other projects"
+readme = "README.md"
 readme.content-type = "text/markdown"
-readme.file = "README.md"
 keywords = ["test", "framework", "cameramonit", "fin-officer", "console", "terminal", "time"]
 license = "Apache-2.0"
 requires-python = ">=3.7"
-
 dependencies = [
     "packaging>=23.2",
     "tomli>=2.0.1",
@@ -57,6 +54,7 @@ authors = [
 maintainers = [
     { name = "pyfunc developers", email = "info@softreck.dev" }
 ]
+
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Environment :: Console",
@@ -110,8 +108,8 @@ classifiers = [
     "Topic :: System :: Monitoring",
     "Topic :: System :: Shells",
     "Topic :: Terminals",
-    "Topic :: Utilities"]
-
+    "Topic :: Utilities"
+]
 
 [tool.hatch.metadata.hooks.requirements_txt]
 #files = ["requirements.txt"]
@@ -119,18 +117,27 @@ classifiers = [
 [tool.pylint]
 max-line-length = 88
 disable = [
-    "C0103", # (invalid-name)
-    "C0114", # (missing-module-docstring)
-    "C0115", # (missing-class-docstring)
-    "C0116", # (missing-function-docstring)
-    "R0903", # (too-few-public-methods)
-    "R0913", # (too-many-arguments)
-    "W0105", # (pointless-string-statement)
+    "C0103",  # (invalid-name)
+    "C0113",  # (missing-module-docstring)
+    "C0114",  # (missing-class-docstring)
+    "C0115",  # (missing-function-docstring)
+    "R0903",  # (too-few-public-methods)
+    "R0913",  # (too-many-arguments)
+    "W0105",  # (pointless-string-statement)
 ]
 
 [tool.flake8]
 max_line_length = 99
-exclude = [".git", "__pycache__", "build", "dist", ".eggs", ".asv", ".tox", ".ipynb_checkpoints"]
+exclude = [
+    ".git",
+    "__pycache__",
+    "build",
+    "dist",
+    ".eggs",
+    ".asv",
+    ".tox",
+    ".ipynb_checkpoints"
+]
 
 [tool.yapf]
 spaces_before_comment = [15, 20]
@@ -159,16 +166,18 @@ source = ["src"]
 [tool.coverage.report]
 show_missing = true
 
-[tool.coverage]
-html.show_contexts = true
-html.skip_covered = false
-paths.source = [
+[tool.coverage.html]
+show_contexts = true
+skip_covered = false
+
+[tool.coverage.paths]
+source = [
     "src",
     ".tox*/*/lib/python*/site-packages",
     ".tox*/pypy*/site-packages",
     ".tox*\\*\\Lib\\site-packages",
     "*/src",
-    "*\\src",
+    "*\\src"
 ]
 
 [tool.black]
@@ -184,11 +193,12 @@ known-first-party = ["pyproject_hooks", "tests"]
 python_version = "3.11"
 show_error_codes = true
 strict = true
-overrides = [{ module = ["virtualenv.*"], ignore_missing_imports = true }]
+overrides = [
+    { module = ["virtualenv.*"], ignore_missing_imports = true }
+]
 
 [tool.hatch.version]
 path = "src/__init__.py"
-#pattern = "BUILD = 'b(?P<version>[^']+)'"
 
 [tool.setuptools.dynamic]
 version = { attr = "my_package.VERSION" }
@@ -196,6 +206,5 @@ readme = { file = ["README.md", "TODO.md"] }
 
 [tool.setuptools_scm]
 
-
 [tool.hatch.build.targets.wheel]
-packages = ["src"]
+packages = ["pyfunc2"]
