@@ -1,10 +1,14 @@
-# [lib](http://lib.pyfunc.com)
+# [pyfunc2](http://lib.pyfunc.com)
 
 libs for cameramonit, ocr, fin-officer, cfo, and other projects
 
 
-
 ## Install
+
+
+```bash
+pip install pyfunc2
+```
 
 ```bash
 git clone https://github.com/pyfunc/lib.git pyfunc
@@ -154,6 +158,7 @@ git push origin --tags
 
 ```bash
 pip install build
+pip install build hatchling
 ```
 
 
@@ -162,3 +167,93 @@ py -m build
 ```
 
 
+
+
+
+## init
+
+The `__init__.py` file is used to mark a directory as a Python package and can also be used to initialize code, define the package's public API, and handle package-level variables or imports.
+
+Here’s a basic guide on preparing the `__init__.py` file for your project located in the `src/pyfunc2` directory.
+
+### Basic `__init__.py`
+
+1. **Creating the `__init__.py` File**:
+   - Navigate to `src/pyfunc2/` directory.
+   - Create an `__init__.py` file in this directory.
+
+Here is a basic example of what this file might contain:
+
+
+
+### Ensuring Proper Package Structure
+
+Here's what your final project structure might look like:
+
+```
+my_project/
+├── src/
+│   └── pyfunc2/
+│       ├── __init__.py
+│       ├── module1.py
+│       └── module2.py
+├── pyproject.toml
+├── README.md
+└── requirements.txt
+```
+
+
+
+
+
+
+
+Hoe generate an `__init__.py` file automatically based on information in `pyproject.toml` typically
+
+Let's break down how you can achieve this:
+
+1. **Understand the data to be included in `__init__.py`**: Essentially, you might want to include metadata (like version), and possibly auto-imports of modules/classes/functions.
+
+2. **Create a script to generate `__init__.py`**: This script would read `pyproject.toml`, extract the relevant information, and generate the `__init__.py` file.
+
+### Step-by-Step Guide
+
+#### Step 1: Install Required Libraries
+
+You will need `toml` for parsing `pyproject.toml`. Install it using `pip`.
+
+```bash
+pip install toml
+```
+
+#### Step 2: generate_init.py
+
+Create a Python script, e.g., `generate_init.py`, at the root of your project:
+
+Ensure that your `generate_init.py` script runs as part of your build process in your GitHub Actions workflow.
+
+Here's an updated GitHub Actions workflow to include the script execution:
+
+```bash
+py generate_init.py -p src/pyfunc2
+py generate_init.py -p src/pyfunc2/config
+py generate_init.py -p src/pyfunc2/csv
+py generate_init.py -p src/pyfunc2/email
+py generate_init.py -p src/pyfunc2/file
+py generate_init.py -p src/pyfunc2/function
+py generate_init.py -p src/pyfunc2/github
+py generate_init.py -p src/pyfunc2/local
+py generate_init.py -p src/pyfunc2/markdown
+py generate_init.py -p src/pyfunc2/ml
+py generate_init.py -p src/pyfunc2/ocr
+py generate_init.py -p src/pyfunc2/report
+py generate_init.py -p src/pyfunc2/serialization
+py generate_init.py -p src/pyfunc2/text
+
+```
+
+
+
+```bash
+pip install dist/my_package-0.0.1.tar
+```

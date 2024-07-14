@@ -12,7 +12,7 @@ issue = "https://github.com/pyfunc/lib/issues/new"
 
 [project]
 name = "pyfunc2"
-version = "0.1.13"
+version = "0.1.15"
 #dynamic = ["dependencies"]
 #dynamic = ["version"]
 description = "libs for cameramonit, ocr, fin-officer, cfo, and other projects"
@@ -140,7 +140,15 @@ blank_line_before_nested_class_or_def = false
 [tool.isort]
 line_length = 99
 multi_line_output = 4
-known_first_party = ["src", "tests"]
+profile = "black"
+src_paths = ["src/pyfunc2", "test"]
+honor_noqa = true
+
+[tool.pytest.ini_options]
+addopts = "--doctest-modules"
+doctest_optionflags = "NORMALIZE_WHITESPACE ELLIPSIS"
+minversion = "6.2"
+testpaths = ["tests"]
 
 #[tool.coverage.run]
 #branch = true
@@ -169,11 +177,11 @@ source = [
 [tool.black]
 line-length = 120
 
-[tool.ruff]
-src = ["src", "tests"]
+#[tool.ruff]
+#src = ["src", "tests"]
 
-[tool.ruff.isort]
-known-first-party = ["pyproject_hooks", "tests"]
+#[tool.ruff.isort]
+#known-first-party = ["pyproject_hooks", "tests"]
 
 [tool.mypy]
 python_version = "3.11"
@@ -184,7 +192,7 @@ overrides = [
 ]
 
 [tool.hatch.version]
-path = "src/__init__.py"
+path = "src/pyfunc2/__init__.py"
 
 [tool.setuptools.dynamic]
 version = { attr = "my_package.VERSION" }
@@ -192,4 +200,5 @@ readme = { file = ["README.md", "TODO.md"] }
 
 
 [tool.hatch.build.targets.wheel]
-packages = ["config, csv, eamil, file, function, github, local, markdown, ml, ocr, report, serialization, text"]
+packages = ["pyfunc2"]
+
