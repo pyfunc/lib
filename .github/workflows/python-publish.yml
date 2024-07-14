@@ -9,8 +9,14 @@ permissions:
   id-token: write
 
 jobs:
-  deploy:
+  pypi-publish:
+    name: upload release to PyPI
     runs-on: ubuntu-latest
+    # Specifying a GitHub environment is optional, but strongly encouraged
+    environment: release
+    permissions:
+      # IMPORTANT: this permission is mandatory for trusted publishing
+      id-token: write
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python
