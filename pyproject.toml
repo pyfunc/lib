@@ -19,7 +19,7 @@ issue = "https://github.com/pyfunc/lib/issues/new"
 
 
 [project]
-name = "pyfunc"
+name = "pyfunc2"
 version = "0.1.8"
 #dynamic = ["dependencies"]
 #dynamic = ["version"]
