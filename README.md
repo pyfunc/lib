@@ -252,8 +252,10 @@ py generate_init.py -p src/pyfunc2/text
 
 ```
 
-
+```bash
+py -m build
+```
 
 ```bash
-pip install dist/my_package-0.0.1.tar
+pip install dist/pyfunc2-0.1.15-py3-none-any.whl
 ```

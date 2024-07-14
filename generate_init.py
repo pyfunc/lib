@@ -29,7 +29,7 @@ __version__ = "{version}"
     package_dir = os.path.join("src", project_info["name"])
     os.makedirs(package_dir, exist_ok=True)
 
-    #with open(os.path.join(package_dir, "__init__.py"), "w") as f:
+    # with open(os.path.join(package_dir, "__init__.py"), "w") as f:
     #    f.write(init_content)
 
     print(f"__init__.py generated at {os.path.join(package_dir, '__init__.py')}")
@@ -67,7 +67,6 @@ def find_importable_elements_from_subfolders(root: Path) -> List[Tuple[str, str]
     return result
 
 
-
 def template_initpy(imports: List[Tuple[str, str]]):
     template = bypyproject()
     for fname, elname in imports:
@@ -88,7 +87,7 @@ def main():
         args.path = Path('./').abspath()
 
     imports = find_importable_elements_from_files(args.path) + \
-        find_importable_elements_from_subfolders(args.path)
+              find_importable_elements_from_subfolders(args.path)
     print('imports found:', '\n'.join([f'\t{a} - {b}' for a, b in imports]), sep='\n')
     init_content = template_initpy(imports)
 
