@@ -90,3 +90,34 @@ Pamiętaj, że tokeny dostępu osobistego są bardzo wrażliwe na bezpieczeństw
 Traktuj je jak hasła i nigdy nie udostępniaj ich publicznie. Jeśli przypadkowo ujawnisz swój token, natychmiast go usuń i wygeneruj nowy.
 
 Po wykonaniu tych kroków, powinieneś być w stanie zaktualizować plik workflow bez problemów. Jeśli nadal napotkasz problemy, upewnij się, że masz odpowiednie uprawnienia w repozytorium i że workflow nie są zablokowane przez ustawienia organizacji lub repozytorium.
+
+# update PAT in repo
+our local repo and want to push it to a remote repo.
+
+create a PAT (personal access token): official doc here. Make sure to tick the box "workflow" when creating it.
+In the terminal, instead of the classic
+
+```bash
+git remote add origin https://github.com/<account>/<repo>.git
+```
+
+swap it by
+```bash
+git remote add origin https://<PAT>@github.com/<account>/<repo>.git
+```
+example
+```bash
+# check
+git remote -v
+PAT=...
+git remote add origin https://$PAT@github.com/pyfunc/lib.git
+# OR update:
+git remote set-url origin https://$PAT@github.com/pyfunc/lib.git
+# check
+git remote -v
+git push
+```
+
+Follow-up with the classic git branch -M main and git push -u origin main
+
+That worked for me. Hopefully for you too.
