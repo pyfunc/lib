@@ -18,7 +18,7 @@ issue = "https://github.com/pyfunc/lib/issues/new"
 
 [project]
 name = "pyfunc2"
-version = "0.1.10"
+version = "0.1.11"
 #dynamic = ["dependencies"]
 #dynamic = ["version"]
 description = "libs for cameramonit, ocr, fin-officer, cfo, and other projects"
