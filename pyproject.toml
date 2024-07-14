@@ -195,3 +195,7 @@ version = { attr = "my_package.VERSION" }
 readme = { file = ["README.md", "TODO.md"] }
 
 [tool.setuptools_scm]
+
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]

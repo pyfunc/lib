@@ -11,13 +11,6 @@ git clone https://github.com/pyfunc/lib.git pyfunc
 ```
 
 
-## TODO
-
-+ [ ] create Docker for test purpose, based on pyDock
-
-
-
-
 ## Contributing
 
 ```bash
