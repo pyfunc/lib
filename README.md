@@ -1,6 +1,6 @@
 # [lib](http://lib.pyfunc.com)
 
-all libs for cameramonit, ocr, fin-officer, cfo, and other projects
+libs for cameramonit, ocr, fin-officer, cfo, and other projects
 
 
 ## Install
