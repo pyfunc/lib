@@ -3,7 +3,7 @@ import sys
 
 from pyfunc2.github.create_repo_on_not_git_repo_folder import create_repo_on_not_git_repo_folder
 
-sys.path.append('../')
+
 from function.flat_array import flat_array
 
 from function.extract_domain_name_from_url import extract_domain_name_from_url
@@ -13,10 +13,10 @@ from pyfunc2.github.create_notexisting_folder import create_notexisting_folder
 from pyfunc2.github.get_param_from_repo import get_param_from_repo
 from pyfunc2.github.defaults import defaults
 from pyfunc2.github.set_github_pages_domain import set_github_pages_domain
-from local.create_path import create_path
-from local.init_local_repo import init_local_repo
-from local.push_local_repo import push_local_repo
-from local.clone_repo import clone_repo
+from pyfunc2.local.create_path import create_path
+from pyfunc2.local.init_local_repo import init_local_repo
+from pyfunc2.local.push_local_repo import push_local_repo
+from pyfunc2.local.clone_repo import clone_repo
 from pyfunc2.github.set_domain_on_github_org_pages import set_domain_on_github_org_pages
 
 

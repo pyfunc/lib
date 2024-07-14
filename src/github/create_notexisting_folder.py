@@ -1,9 +1,9 @@
 import sys
-sys.path.append('../')
+
 from function.differenceElementsInArrays import differenceElementsInArrays
-from local.fromFilenametoLinesAsArray import fromFilenametoLinesAsArray
-from local.generate_template import generate_template
-from local.load_file import load_file
+from pyfunc2.local.fromFilenametoLinesAsArray import fromFilenametoLinesAsArray
+from pyfunc2.local.generate_template import generate_template
+from pyfunc2.local.load_file import load_file
 from pyfunc2.github.get_param_from_repo import get_param_from_repo
 from pyfunc2.github.create_repo_on_github_and_local import create_repo_on_github_and_local
 

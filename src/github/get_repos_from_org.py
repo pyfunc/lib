@@ -1,7 +1,7 @@
 import sys
 import requests
 
-sys.path.append('../')
+
 
 def get_repos_from_org(org_name, headers):
     repos_url = f'https://api.github.com/orgs/{org_name}/repos'

@@ -2,7 +2,7 @@ import requests
 import os
 import sys
 
-sys.path.append('../')
+
 from pyfunc2.github.create_repo_on_github import create_repo_on_github
 
 # Initialize the local project and add the remote GitHub

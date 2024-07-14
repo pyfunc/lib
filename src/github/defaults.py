@@ -1,7 +1,7 @@
 import os
 import sys
 
-sys.path.append('../')
+
 from function.extract_domain_name_from_url import extract_domain_name_from_url
 from pyfunc2.github.change_default_branch import change_default_branch
 

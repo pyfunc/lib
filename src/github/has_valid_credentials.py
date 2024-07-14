@@ -1,6 +1,6 @@
 import sys
 import requests
-sys.path.append('../')
+
 
 def has_valid_credentials(org_name, headers):
     repos_url = f'https://api.github.com/orgs/{org_name}/repos'

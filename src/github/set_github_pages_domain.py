@@ -1,7 +1,7 @@
 import sys
 import requests
 
-sys.path.append('../')
+
 from pyfunc2.github.get_repository_list_wtih_github_pages import get_repository_list_wtih_github_pages
 from pyfunc2.github.getHeaders import getHeaders
 from pyfunc2.github.enable_github_pages import enable_github_pages

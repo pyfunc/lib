@@ -1,13 +1,13 @@
 import os
 import sys
 
-sys.path.append('../')
+
 from function.extract_domain_name_from_url import extract_domain_name_from_url
 from pyfunc2.github.set_github_pages_domain import set_github_pages_domain
-from local.create_path import create_path
+from pyfunc2.local.create_path import create_path
 from pyfunc2.github.create_repo_on_not_git_repo_folder import create_repo_on_not_git_repo_folder
-from local.init_local_repo import init_local_repo
-from local.push_local_repo import push_local_repo
+from pyfunc2.local.init_local_repo import init_local_repo
+from pyfunc2.local.push_local_repo import push_local_repo
 from pyfunc2.github.defaults import defaults
 from pyfunc2.github.create_repo_on_github_and_local import create_repo_on_github_and_local
 

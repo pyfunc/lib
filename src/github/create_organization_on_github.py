@@ -2,7 +2,7 @@ import sys
 import requests
 import json
 
-sys.path.append('../')
+
 from pyfunc2.github.getHeaders import getHeaders
 from pyfunc2.github.get_owner_json import get_owner_json
 

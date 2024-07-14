@@ -1,7 +1,5 @@
 import requests
 import sys
-
-sys.path.append('../')
 from pyfunc2.github.getHeaders import getHeaders
 
 GITHUB_API_URL="https://api.github.com"

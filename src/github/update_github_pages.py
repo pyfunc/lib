@@ -1,7 +1,7 @@
 import sys
 import requests
 
-sys.path.append('../')
+
 from pyfunc2.github.getHeaders2 import getHeaders2
 
 

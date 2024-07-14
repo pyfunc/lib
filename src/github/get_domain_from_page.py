@@ -1,7 +1,7 @@
 import sys
 import requests
 
-sys.path.append('../')
+
 from pyfunc2.github.getHeaders import getHeaders
 
 # Retrieve a list of all repositories within the organization
