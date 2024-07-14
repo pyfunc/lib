@@ -12,14 +12,14 @@ issue = "https://github.com/pyfunc/lib/issues/new"
 
 [project]
 name = "pyfunc2"
-version = "0.1.12"
+version = "0.1.13"
 #dynamic = ["dependencies"]
 #dynamic = ["version"]
 description = "libs for cameramonit, ocr, fin-officer, cfo, and other projects"
 readme.content-type = "text/markdown"
 readme.file = "README.md"
 keywords = ["test", "framework", "cameramonit", "fin-officer", "console", "terminal", "time"]
-license = { text = "Apache-2.0", file = "LICENSE" }
+license = { file = "LICENSE" }
 requires-python = ">=3.7"
 dependencies = [
     "packaging>=23.2",
@@ -99,8 +99,6 @@ classifiers = [
     "Topic :: Utilities"
 ]
 
-[tool.hatch.metadata.hooks.requirements_txt]
-files = ["requirements.txt"]
 
 [tool.pylint]
 max-line-length = 88
@@ -192,7 +190,6 @@ path = "src/__init__.py"
 version = { attr = "my_package.VERSION" }
 readme = { file = ["README.md", "TODO.md"] }
 
-[tool.setuptools_scm]
 
 [tool.hatch.build.targets.wheel]
-packages = ["pyfunc2"]
+packages = ["config, csv, eamil, file, function, github, local, markdown, ml, ocr, report, serialization, text"]

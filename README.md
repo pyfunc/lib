@@ -147,3 +147,18 @@ example:
 git tag 0.1.12
 git push origin --tags
 ```
+
+
+
+## test
+
+```bash
+pip install build
+```
+
+
+```bash
+py -m build
+```
+
+
