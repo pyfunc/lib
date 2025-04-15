@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.36] - 2025-04-15
+
+### Added
+- Changes in examples/create_function_by_text_example.py
+- Changes in examples/create_functions_based_on_csv_example.py
+
 ## [0.1.35] - 2025-04-15
 
 ## [0.1.34] - 2025-04-15
