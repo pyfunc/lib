@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.37] - 2025-04-15
+
+### Added
+- Changes in examples/get_filename_by_text_example.py
+- Changes in examples/get_foldername_by_text_example.py
+- Changes in examples/get_path_by_text_example.py
+
 ## [0.1.36] - 2025-04-15
 
 ### Added
