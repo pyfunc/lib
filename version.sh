@@ -34,20 +34,3 @@ python changelog.py
 #python increment.py
 bash git.sh
 bash publish.sh
-
-## update build tools
-pip install --upgrade setuptools wheel build twine
-
-# Zbuduj paczkę
-echo "Building package..."
-python -m build
-
-# Sprawdź paczkę
-echo "Checking package..."
-twine check dist/*
-
-# Opublikuj na PyPI
-echo "Publishing to PyPI..."
-twine upload dist/*
-
-echo "Publication complete!"
