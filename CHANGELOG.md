@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.34] - 2025-04-15
+
+### Added
+- Changes in examples/convert_pdf_to_base64_example.py
+- Changes in examples/dir_list_example.py
+- Changes in examples/download_attachments_in_email_example.py
+- Changes in examples/find_string_in_file_path_example.py
+- Changes in examples/find_string_in_pdf_example.py
+- Changes in examples/from_folder_to_year_example.py
+- Changes in examples/from_month_to_company_example.py
+- Changes in examples/get_date_from_pdf_example.py
+- Changes in examples/get_date_from_pdf_pattern_example.py
+- Changes in version/init.py
+- Changes in version/project.py
+- Changes in version/setup.py
+- Changes in version/src.py
+
 ## [0.1.33] - 2025-04-15
 
 ## [0.1.32] - 2025-04-15

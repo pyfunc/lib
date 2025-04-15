@@ -179,7 +179,7 @@ def main():
 
     args = parser.parse_args()
 
-    file_name = "src/pyfunc2/_version.py"
+    file_name = "src/*/_version.py"
     file_path = "./" + file_name
     current_version = get_version_from_file(file_path)
     updated_versions = []
