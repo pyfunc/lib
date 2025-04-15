@@ -35,6 +35,9 @@ python changelog.py
 bash git.sh
 bash publish.sh
 
+## update build tools
+pip install --upgrade setuptools wheel build twine
+
 # Zbuduj paczkę
 echo "Building package..."
 python -m build
