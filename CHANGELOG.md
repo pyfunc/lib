@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.17] - 2025-04-15
+
+### Added
+- Changes in setup.py
+
 ## [0.1.16] - 2025-04-15
 
 ## [0.1.15] - 2025-04-15
