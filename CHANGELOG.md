@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.21] - 2025-04-15
+
+### Added
+- Changes in MANIFEST.in
+
 ## [0.1.20] - 2025-04-15
 
 ## [0.1.19] - 2025-04-15
