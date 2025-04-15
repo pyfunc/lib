@@ -10,27 +10,6 @@ NC='\033[0m' # No Color
 
 echo -e "${GREEN}Starting publication process...${NC}"
 
-# Function to extract latest version from CHANGELOG.md
-get_latest_version() {
-    # Extract the first version number found in CHANGELOG.md
-    version=$(grep -m 1 "## \[.*\]" CHANGELOG.md | grep -o "\[.*\]" | tr -d "[]")
-    echo $version
-}
-
-
-echo -e "${GREEN}Get version and changes...${NC}"
-VERSION_CHANGELOG=$(get_latest_version)
-if [ -z "$VERSION_CHANGELOG" ]; then
-    echo "Error: Could not find version in CHANGELOG.md"
-    exit 1
-fi
-
-echo -e "${GREEN}Update version in setup.py...${NC}"
-VERSION_SETUP=$(python setup.py --version)
-#sed -i "s/$VERSION_SETUP/$VERSION_CHANGELOG/" setup.py
-#sed -i "s/$VERSION_SETUP/$VERSION_CHANGELOG/" setup.cfg
-sed -i "s/$VERSION_SETUP/$VERSION_CHANGELOG/" src/pyfunc2/__init__.py
-
 echo -e "${GREEN}push changes...${NC}"
 ./git.sh
 
