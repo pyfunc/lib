@@ -3,8 +3,7 @@ import email
 from types import NoneType
 
 import sys
-from file.check_and_create_path import check_and_create_path
-
+from ..file.check_and_create_path import check_and_create_path
 
 # pip install python-magic
 
