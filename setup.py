@@ -18,7 +18,7 @@ except FileNotFoundError:
 # Configuration setup
 setup(
     name="pyfunc2",
-    version="0.1.24",
+    version="0.1.25",
     description="libs for cameramonit, ocr, fin-officer, cfo, and other projects",
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
@@ -38,14 +38,7 @@ setup(
     package_dir={"": "src"},
     license="Apache-2.0",  # Use simple string format
     license_files=("LICENSE"),  # Empty tuple to explicitly prevent license files
-    keywords=["python", "pyfunc", "pyfunc2", "pyfunc3", "pyfunc4", "pyfunc5", "pyfunc6",
-              "pyfunc7", "pyfunc8", "pyfunc9", "pyfunc10", "pyfunc11", "pyfunc12",
-              "pyfunc13", "pyfunc14", "pyfunc15", "pyfunc16", "pyfunc17", "pyfunc18",
-              "pyfunc19", "pyfunc20", "pyfunc21", "pyfunc22", "pyfunc23", "pyfunc24",
-              "pyfunc25", "pyfunc26", "pyfunc27", "pyfunc28", "pyfunc29", "pyfunc30",
-              "pyfunc31", "pyfunc32", "pyfunc33", "pyfunc34", "pyfunc35", "pyfunc36",
-              "pyfunc37", "pyfunc38", "pyfunc39", "pyfunc40", "pyfunc41", "pyfunc42",
-              "pyfunc43", "pyfunc"],
+    keywords=["python", "pyfunc", "pyfunc2", "pyfunc3", "pyfunc"],
     classifiers=[
         'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python',
