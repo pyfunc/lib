@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.31] - 2025-04-15
+
+### Added
+- Changes in examples/check_and_create_path_example.py
+- Changes in examples/check_and_create_path_from_filepath_example.py
+- Changes in examples/create_folder_example.py
+- Changes in examples/find_duplicates_example.py
+- Changes in examples/is_file_hidden_example.py
+- Changes in examples/is_path_hidden_example.py
+- Changes in examples/remove_duplicates_example.py
+- Changes in examples/remove_duplicates_in_path_example.py
+
 ## [0.1.30] - 2025-04-15
 
 ## [0.1.29] - 2025-04-15

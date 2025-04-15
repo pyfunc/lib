@@ -3,7 +3,7 @@ import sys
 
 sys.path.append('../')
 
-from pyfunc.ocr.find_string_in_pdf import find_string_in_pdf
+from .find_string_in_pdf import find_string_in_pdf
 
 
 def find_string_in_file_path(paths, find_text, extension_list=['.pdf']):

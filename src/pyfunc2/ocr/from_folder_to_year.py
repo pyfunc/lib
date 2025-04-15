@@ -8,8 +8,8 @@ import dateutil.parser as dparser
 import sys
 
 sys.path.append('../')
-from pyfunc.ocr.get_date_from_pdf import get_date_from_pdf
-from pyfunc.ocr.get_date_from_pdf_pattern import get_date_from_pdf_pattern
+from .get_date_from_pdf import get_date_from_pdf
+from .get_date_from_pdf_pattern import get_date_from_pdf_pattern
 
 
 # move from IN to selected month

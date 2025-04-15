@@ -8,7 +8,7 @@ import dateutil.parser as dparser
 import sys
 
 sys.path.append('../')
-from pyfunc.ocr.get_company_from_pdf import get_company_from_pdf
+from .get_company_from_pdf import get_company_from_pdf
 
 
 # move from IN to selected month

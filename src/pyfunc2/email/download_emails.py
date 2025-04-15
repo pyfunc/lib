@@ -5,7 +5,7 @@ import logging
 import imaplib
 import datetime
 import email
-from download_attachments_in_email import download_attachments_in_email
+from .download_attachments_in_email import download_attachments_in_email
 
 
 def download_emails(server, user, password, local_folder, remote_folder="inbox", limit=50, select_month=0, year=0):
