@@ -1,6 +1,6 @@
 """Version information for pyfunc2 package."""
 
-__version__ = version = "0.1.24"
+__version__ = version = "0.1.25"
 
 def get_version():
     """Return the current package version."""

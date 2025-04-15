@@ -27,9 +27,9 @@ pip install -r requirements.txt
 # Zainstaluj w trybie edytowalnym
 pip install -e .
 python increment_init.py -f src/pyfunc2/__init__.py
-#python increment_setup.py
+python increment_setup.py
 python increment_version.py
-python increment_project.py
+#python increment_project.py
 python changelog.py
 #python increment.py
 bash git.sh
