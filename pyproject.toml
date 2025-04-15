@@ -46,7 +46,6 @@ maintainers = [
     { name = "pyfunc developers", email = "info@softreck.dev" }
 ]
 
-# Remove the OSI Approved classifier as per the error message
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Environment :: Console",
@@ -61,7 +60,6 @@ classifiers = [
     "Intended Audience :: End Users/Desktop",
     "Intended Audience :: Other Audience",
     "Intended Audience :: System Administrators",
-    "License :: OSI Approved :: Apache Software License",
     "Operating System :: MacOS",
     "Operating System :: MacOS :: MacOS X",
     "Operating System :: Microsoft",
