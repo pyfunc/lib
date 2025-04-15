@@ -2,8 +2,8 @@ import sys
 
 sys.path.append('../')
 
-from pyfunc.email.download_all_attachments_in_inbox import download_all_attachments_in_inbox
-from pyfunc.config.get_email_path import get_email_path
+from .email.download_all_attachments_in_inbox import download_all_attachments_in_inbox
+from .config.get_email_path import get_email_path
 
 
 def email_update(emails, storage_root="", limit=3):

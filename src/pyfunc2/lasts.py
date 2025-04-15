@@ -1,7 +1,7 @@
 import os
-from pyfunc.email_update import email_update
-from pyfunc.file.file_list import file_list
-from pyfunc.config.ftp_update import ftp_update
+from .email_update import email_update
+from .file.file_list import file_list
+from .config.ftp_update import ftp_update
 
 
 # files = os.list
@@ -20,6 +20,3 @@ def lasts(image_path, limit=3, emails=[], ftps=[], storage_root=""):
     images.sort(key=lambda x: os.path.getmtime(os.path.join(image_path, x)))
     images.reverse()
     return images[:int(limit)]
-
-
-

@@ -1,9 +1,9 @@
 import sys
 # sys.path.append('../')
 
-from pyfunc.lasts import lasts
-from pyfunc.config.get_email_path import get_email_path
-from pyfunc.config.get_ftp_path import get_ftp_path
+from .lasts import lasts
+from .config.get_email_path import get_email_path
+from .config.get_ftp_path import get_ftp_path
 
 
 def all_lasts(images=[], lines=3, emails=[], ftps=[], storage_root="", remote_folder="inbox"):
