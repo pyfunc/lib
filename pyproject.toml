@@ -1,30 +1,14 @@
 [build-system]
-requires = [
-    "setuptools >= 61.0",
-    "wheel",
-    "setuptools-git-versioning"
-]
+requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "pyfunc2"
-dynamic = ["version"]
+version = "0.1.11"
 description = "libs for cameramonit, ocr, fin-officer, cfo, and other projects"
 readme = "README.md"
-license = "Apache-2.0"
+license = {text = "Apache-2.0"}
 requires-python = ">=3.7"
-dependencies = [
-    "stringcase ~=1.2.0",
-    "certifi >=2024.7.4",
-    "charset-normalizer >=3.3.2",
-    "idna >=3.7",
-    "iniconfig >=2.0.0",
-    "packaging >=24.1",
-    "pluggy >=1.5.0",
-    "pytest >=8.2.2",
-    "requests >=2.32.3",
-    "urllib3 >=2.2.2"
-]
 
 authors = [
     { name = "Tom Sapletta", email = "tom@sapletta.com" }
@@ -33,73 +17,15 @@ maintainers = [
     { name = "pyfunc developers", email = "info@softreck.dev" }
 ]
 
-# Remove the deprecated license classifier
-classifiers = [
-    "Development Status :: 5 - Production/Stable",
-    "Environment :: Console",
-    "Environment :: MacOS X",
-    "Environment :: Other Environment",
-    "Environment :: Win32 (MS Windows)",
-    "Environment :: X11 Applications",
-    "Framework :: IPython",
-    "Framework :: Jupyter",
-    "Intended Audience :: Developers",
-    "Intended Audience :: Education",
-    "Intended Audience :: End Users/Desktop",
-    "Intended Audience :: Other Audience",
-    "Intended Audience :: System Administrators",
-    "Operating System :: MacOS",
-    "Operating System :: MacOS :: MacOS X",
-    "Operating System :: Microsoft",
-    "Operating System :: Microsoft :: MS-DOS",
-    "Operating System :: Microsoft :: Windows",
-    "Operating System :: POSIX",
-    "Operating System :: POSIX :: BSD",
-    "Operating System :: POSIX :: BSD :: FreeBSD",
-    "Operating System :: POSIX :: Linux",
-    "Operating System :: POSIX :: SunOS/Solaris",
-    "Operating System :: Unix",
-    "Programming Language :: Python",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.7",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: Implementation",
-    "Programming Language :: Python :: Implementation :: IronPython",
-    "Programming Language :: Python :: Implementation :: PyPy",
-    "Programming Language :: Unix Shell",
-    "Topic :: Desktop Environment",
-    "Topic :: Education :: Computer Aided Instruction (CAI)",
-    "Topic :: Education :: Testing",
-    "Topic :: Office/Business",
-    "Topic :: Other/Nonlisted Topic",
-    "Topic :: Software Development :: Build Tools",
-    "Topic :: Software Development :: Libraries",
-    "Topic :: Software Development :: Libraries :: Python Modules",
-    "Topic :: Software Development :: Pre-processors",
-    "Topic :: Software Development :: User Interfaces",
-    "Topic :: System :: Installation/Setup",
-    "Topic :: System :: Logging",
-    "Topic :: System :: Monitoring",
-    "Topic :: System :: Shells",
-    "Topic :: Terminals",
-    "Topic :: Utilities"
-]
-
 [project.urls]
 homepage = "https://www.pyfunc.com"
-documentation = "https://docs.pyfunc.com"
 repository = "https://github.com/pyfunc/lib"
 changelog = "https://github.com/pyfunc/lib/releases"
 wiki = "https://github.com/pyfunc/lib/wiki"
 issue = "https://github.com/pyfunc/lib/issues/new"
 
-[tool.setuptools.dynamic]
-version = {attr = "pyfunc2._version.__version__"}
 
 [tool.setuptools]
 package-dir = {"" = "src"}
 packages = ["pyfunc2", "pyfunc2.config", "pyfunc2.email", "pyfunc2.file"]
+
