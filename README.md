@@ -294,3 +294,30 @@ source venv/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
+
+I see a persistent issue with your package publication process. Let me help you resolve these problems:
+
+1. Version Detection Problem
+The error messages show that the version is not being correctly detected:
+```
+❌ Could not find version in src/pyfunc2/__init__.py
+❌ Could not find version in ./src/pyfunc2/_version.py
+❌ Could not find version in ./pyproject.toml
+```
+
+2. License Classifier Issue
+There's an ongoing problem with the license classifier in the `pyproject.toml`.
+
+1. Replace your existing `pyproject.toml` with the new version
+2. Create `src/pyfunc2/_version.py` with the content I provided
+3. Remove any existing `setup.py` if it exists
+4. Use `python -m build` to create distribution
+5. Use `twine upload dist/*` to publish
+
+Recommended workflow:
+```bash
+# Ensure you're in your project root
+python -m pip install --upgrade build twine
+python -m build
+python -m twine upload dist/*
+```

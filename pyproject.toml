@@ -6,6 +6,7 @@ requires = [
 ]
 build-backend = "setuptools.build_meta"
 
+
 [tool.setuptools-git-versioning]
 enabled = true
 
@@ -17,12 +18,13 @@ changelog = "https://github.com/pyfunc/lib/releases"
 wiki = "https://github.com/pyfunc/lib/wiki"
 issue = "https://github.com/pyfunc/lib/issues/new"
 
+
 [project]
 name = "pyfunc2"
-dynamic = ["version"]
+version = "0.1.8"
+license = "Apache-2.0"
 description = "libs for cameramonit, ocr, fin-officer, cfo, and other projects"
 readme = "README.md"
-license = {text = "Apache-2.0"}
 keywords = ["test", "framework", "cameramonit", "fin-officer", "console", "terminal", "time"]
 requires-python = ">=3.7"
 dependencies = [
