@@ -175,7 +175,7 @@ py -m build
 
 The `__init__.py` file is used to mark a directory as a Python package and can also be used to initialize code, define the package's public API, and handle package-level variables or imports.
 
-Here’s a basic guide on preparing the `__init__.py` file for your project located in the `src/pyfunc2` directory.
+Here’s a basic guide on preparing the `__init__.py` file for your project located in the `src/pyfunc2/` directory.
 
 ### Basic `__init__.py`
 
@@ -279,4 +279,18 @@ pip install 'validate-pyproject[all]'
 
 ```bash
 validate-pyproject pyproject.toml
+```
+
+
+
+## Quick Start
+
+### Local Development
+1. Create virtual environment
+```bash
+rm -rf venv
+python -m venv venv
+source venv/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
 ```

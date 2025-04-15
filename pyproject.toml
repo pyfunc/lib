@@ -26,7 +26,7 @@ issue = "https://github.com/pyfunc/lib/issues/new"
 
 [project]
 name = "pyfunc2"
-#version = "0.1.18"
+#version = "0.1.20"
 dynamic = ["version"]
 #dynamic = ["dependencies"]
 description = "libs for cameramonit, ocr, fin-officer, cfo, and other projects"
@@ -159,7 +159,7 @@ honor_noqa = true
 [tool.pytest.ini_options]
 addopts = "--doctest-modules"
 doctest_optionflags = "NORMALIZE_WHITESPACE ELLIPSIS"
-minversion = "0.1.18"
+minversion = "0.1.20"
 testpaths = ["tests"]
 
 #[tool.coverage.run]
@@ -196,15 +196,16 @@ line-length = 120
 #known-first-party = ["pyproject_hooks", "tests"]
 
 [tool.mypy]
-python_version = "0.1.18"
+python_version = "0.1.20"
 show_error_codes = true
 strict = true
 overrides = [
     { module = ["virtualenv.*"], ignore_missing_imports = true }
 ]
 
-#[tool.hatch.version]
-#path = "src/pyfunc2/__init__.py"
+[tool.hatch.version]
+path = "src/pyfunc2/__init__.py"
+pattern = "__version__ = Version\\(\"pyfunc2\", (?P<major>\\d+), (?P<minor>\\d+), (?P<patch>\\d+)\\)"
 
 #[tool.setuptools.dynamic]
 #version = { attr = "pyfunc2.VERSION" }

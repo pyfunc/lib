@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.2] - 2025-04-15
+
 ## [0.1.1] - 2025-04-15
 
 ### Added
@@ -28,10 +30,10 @@ All notable changes to this project will be documented in this file.
 - Changes in project.sh
 - Changes in publish.sh
 - Changes in src/_build_meta.py
-- Changes in src/pyfunc2/_version.py
-- Changes in src/pyfunc2/email/all_lasts.py
-- Changes in src/pyfunc2/email/email_update.py
-- Changes in src/pyfunc2/email/get_path_file.py
+- Changes in src/pyfunc2//_version.py
+- Changes in src/pyfunc2//email/all_lasts.py
+- Changes in src/pyfunc2//email/email_update.py
+- Changes in src/pyfunc2//email/get_path_file.py
 - Changes in src/pyfunc2/email/lasts.py
 - Changes in src/pyfunc2/local/generate_template.py
 - Changes in update/duplicated.py
