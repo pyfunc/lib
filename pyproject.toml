@@ -26,14 +26,14 @@ issue = "https://github.com/pyfunc/lib/issues/new"
 
 [project]
 name = "pyfunc2"
-#version = "0.1.20"
+#version = "0.1.21"
 dynamic = ["version"]
 #dynamic = ["dependencies"]
 description = "libs for cameramonit, ocr, fin-officer, cfo, and other projects"
 readme.content-type = "text/markdown"
 readme.file = "README.md"
 keywords = ["test", "framework", "cameramonit", "fin-officer", "console", "terminal", "time"]
-license = { file = "LICENSE" }
+license = "Apache-2.0"
 requires-python = ">=3.7"
 dependencies = [
     "stringcase ~=1.2.0",
@@ -159,7 +159,7 @@ honor_noqa = true
 [tool.pytest.ini_options]
 addopts = "--doctest-modules"
 doctest_optionflags = "NORMALIZE_WHITESPACE ELLIPSIS"
-minversion = "0.1.20"
+minversion = "0.1.21"
 testpaths = ["tests"]
 
 #[tool.coverage.run]
@@ -196,7 +196,7 @@ line-length = 120
 #known-first-party = ["pyproject_hooks", "tests"]
 
 [tool.mypy]
-python_version = "0.1.20"
+python_version = "0.1.21"
 show_error_codes = true
 strict = true
 overrides = [
