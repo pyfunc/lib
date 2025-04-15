@@ -6,26 +6,12 @@ requires = [
 ]
 build-backend = "setuptools.build_meta"
 
-
-[tool.setuptools-git-versioning]
-enabled = true
-
-[project.urls]
-homepage = "https://www.pyfunc.com"
-documentation = "https://docs.pyfunc.com"
-repository = "https://github.com/pyfunc/lib"
-changelog = "https://github.com/pyfunc/lib/releases"
-wiki = "https://github.com/pyfunc/lib/wiki"
-issue = "https://github.com/pyfunc/lib/issues/new"
-
-
 [project]
 name = "pyfunc2"
-version = "0.1.9"
-license = "Apache-2.0"
+dynamic = ["version"]
 description = "libs for cameramonit, ocr, fin-officer, cfo, and other projects"
 readme = "README.md"
-keywords = ["test", "framework", "cameramonit", "fin-officer", "console", "terminal", "time"]
+license = "Apache-2.0"
 requires-python = ">=3.7"
 dependencies = [
     "stringcase ~=1.2.0",
@@ -41,12 +27,13 @@ dependencies = [
 ]
 
 authors = [
-    { name = "Tom Sapletta", email = "tom@sapletta.com" },
+    { name = "Tom Sapletta", email = "tom@sapletta.com" }
 ]
 maintainers = [
     { name = "pyfunc developers", email = "info@softreck.dev" }
 ]
 
+# Remove the deprecated license classifier
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Environment :: Console",
@@ -61,7 +48,6 @@ classifiers = [
     "Intended Audience :: End Users/Desktop",
     "Intended Audience :: Other Audience",
     "Intended Audience :: System Administrators",
-    "License :: OSI Approved :: Apache Software License",
     "Operating System :: MacOS",
     "Operating System :: MacOS :: MacOS X",
     "Operating System :: Microsoft",
@@ -103,11 +89,17 @@ classifiers = [
     "Topic :: Utilities"
 ]
 
+[project.urls]
+homepage = "https://www.pyfunc.com"
+documentation = "https://docs.pyfunc.com"
+repository = "https://github.com/pyfunc/lib"
+changelog = "https://github.com/pyfunc/lib/releases"
+wiki = "https://github.com/pyfunc/lib/wiki"
+issue = "https://github.com/pyfunc/lib/issues/new"
+
 [tool.setuptools.dynamic]
 version = {attr = "pyfunc2._version.__version__"}
 
-[tool.hatch.version]
-path = "src/pyfunc2/_version.py"
-
-[tool.hatch.build.targets.wheel]
-packages = ["pyfunc2"]
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["pyfunc2", "pyfunc2.config", "pyfunc2.email", "pyfunc2.file"]
