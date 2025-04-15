@@ -5,12 +5,10 @@ from pdf2image import convert_from_path
 import sys
 
 sys.path.append('../../')
-from file.get_filename_from_path import get_filename_from_path
-from file.check_and_create_path import check_and_create_path
-
-
 
 def convert_pdf_to_base64(pdf_path, extension="png", dpi=70, path_out="./report/2023/img/"):
+    from .check_and_create_path import check_and_create_path
+    from .get_filename_from_path import get_filename_from_path
     check_and_create_path(path_out)
     images = convert_from_path(pdf_path, dpi, path_out, fmt=extension, single_file=True,
                                output_file=get_filename_from_path(pdf_path))

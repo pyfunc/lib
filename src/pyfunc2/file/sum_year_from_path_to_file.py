@@ -9,9 +9,9 @@ from pdf2image import convert_from_path
 from wand.image import Image
 from io import BytesIO
 
-from file.convert_pdf_to_base64 import convert_pdf_to_base64
-from file.get_filename_from_path import get_filename_from_path
-from file.check_and_create_path import check_and_create_path
+from .convert_pdf_to_base64 import convert_pdf_to_base64
+from .get_filename_from_path import get_filename_from_path
+from .check_and_create_path import check_and_create_path
 from ocr.get_company_from_pdf import get_company_from_pdf
 from ocr.CompanyList import CompanyList
 from ocr.get_date_from_pdf import get_date_from_pdf

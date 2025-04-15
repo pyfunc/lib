@@ -3,7 +3,7 @@ import sys
 
 sys.path.append('../')
 
-from file.get_hash import get_hash
+from .get_hash import get_hash
 
 
 def find_duplicates(directory):

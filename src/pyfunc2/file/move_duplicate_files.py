@@ -4,8 +4,8 @@ import sys
 
 sys.path.append('../')
 
-from file.move_file import move_file
-from file.get_hash_sha256 import get_hash_sha256
+from .move_file import move_file
+from .get_hash_sha256 import get_hash_sha256
 
 
 # Python script to move duplicated files based on content:

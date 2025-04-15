@@ -1,8 +1,8 @@
 import sys
 sys.path.append('../')
 
-from file.find_duplicates import find_duplicates
-from file.move_file import move_file
+from .find_duplicates import find_duplicates
+from .move_file import move_file
 
 #  Python script to find duplicate files between two different directories by comparing their hash values. This script assumes that files with the same content will have the same hash value.
 
@@ -33,5 +33,3 @@ def remove_duplicates(source, compare, duplicated):
 
     for file_path in not_duplicated:
         print("remove_duplicates not:", file_path)
-
-
