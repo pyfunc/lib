@@ -1,6 +1,20 @@
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = [
+    # Keep this aligned with the project dependencies.
+    "setuptools >= 61.0",
+    "incremental",
+    "wheel",
+    "setuptools-git-versioning"
+]
+#build-backend = "setuptools.build_meta"
+#backend-path = ["./src"]  # See _build_meta.py
+#build-backend = "_build_meta:build_meta"
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools-git-versioning]
+enabled = true
+
+[tool.incremental]
 
 [project.urls]
 homepage = "https://www.pyfunc.com"
@@ -12,9 +26,9 @@ issue = "https://github.com/pyfunc/lib/issues/new"
 
 [project]
 name = "pyfunc2"
-version = "0.1.15"
+#version = "0.1.18"
+dynamic = ["version"]
 #dynamic = ["dependencies"]
-#dynamic = ["version"]
 description = "libs for cameramonit, ocr, fin-officer, cfo, and other projects"
 readme.content-type = "text/markdown"
 readme.file = "README.md"
@@ -22,8 +36,6 @@ keywords = ["test", "framework", "cameramonit", "fin-officer", "console", "termi
 license = { file = "LICENSE" }
 requires-python = ">=3.7"
 dependencies = [
-    "packaging>=23.2",
-    "tomli>=2.0.1",
     "stringcase ~=1.2.0",
     "certifi >=2024.7.4",
     "charset-normalizer >=3.3.2",
@@ -147,7 +159,7 @@ honor_noqa = true
 [tool.pytest.ini_options]
 addopts = "--doctest-modules"
 doctest_optionflags = "NORMALIZE_WHITESPACE ELLIPSIS"
-minversion = "6.2"
+minversion = "0.1.18"
 testpaths = ["tests"]
 
 #[tool.coverage.run]
@@ -184,21 +196,20 @@ line-length = 120
 #known-first-party = ["pyproject_hooks", "tests"]
 
 [tool.mypy]
-python_version = "3.11"
+python_version = "0.1.18"
 show_error_codes = true
 strict = true
 overrides = [
     { module = ["virtualenv.*"], ignore_missing_imports = true }
 ]
 
-[tool.hatch.version]
-path = "src/pyfunc2/__init__.py"
+#[tool.hatch.version]
+#path = "src/pyfunc2/__init__.py"
 
-[tool.setuptools.dynamic]
-version = { attr = "my_package.VERSION" }
-readme = { file = ["README.md", "TODO.md"] }
+#[tool.setuptools.dynamic]
+#version = { attr = "pyfunc2.VERSION" }
+#readme = { file = ["README.md", "TODO.md"] }
 
 
 [tool.hatch.build.targets.wheel]
 packages = ["pyfunc2"]
-

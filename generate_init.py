@@ -6,14 +6,7 @@ from typing import List, Tuple
 from path import Path
 
 
-def bypyproject():
-    # Load the pyproject.toml file
-    with open("pyproject.toml", "r") as f:
-        pyproject_data = toml.load(f)
-
-    # Extract project information
-    project_info = pyproject_data.get("project", {})
-    version = project_info.get("version", "0.1.0")
+def bypyproject(version):
 
     # Define the content of __init__.py
     init_content = f"""\
@@ -66,9 +59,28 @@ def find_importable_elements_from_subfolders(root: Path) -> List[Tuple[str, str]
                 result.append((subdir.basename(), name))
     return result
 
+def get_project_info(path: Path) -> dict:
+    pyproject_file = path / 'pyproject.toml'
+    if not pyproject_file.exists():
+        return {}
+    with open(pyproject_file) as f:
+        return toml.load(f)
+
+def get_project_version_by_toml(path="pyproject.toml") -> str:
+    # Load the pyproject.toml file
+    with open(path, "r") as f:
+        pyproject_data = toml.load(f)
+    # Extract project information
+    project_info = pyproject_data.get("project", {})
+    version = project_info.get("version", "0.1.0")
+    return version
+
 
 def template_initpy(imports: List[Tuple[str, str]]):
-    template = bypyproject()
+
+    version = 'from ._version import __version__'
+
+    template = bypyproject(version)
     for fname, elname in imports:
         template += f'from .{fname} import {elname}\n'
 

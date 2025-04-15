@@ -2,7 +2,7 @@ import imaplib
 
 import pytest
 
-from pyfunc.email.download_emails import download_emails
+from download_emails import download_emails
 
 
 def test_download_emails_with_valid_credentials_and_folder():

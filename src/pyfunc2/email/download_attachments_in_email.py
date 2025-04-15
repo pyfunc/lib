@@ -1,12 +1,9 @@
-import base64
 import os
 import email
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
-from email.mime.image import MIMEImage
-from pyfunc.file.check_and_create_path import check_and_create_path
-
 from types import NoneType
+
+import sys
+from file.check_and_create_path import check_and_create_path
 
 
 # pip install python-magic

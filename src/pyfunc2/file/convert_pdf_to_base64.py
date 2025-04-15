@@ -5,8 +5,8 @@ from pdf2image import convert_from_path
 import sys
 
 sys.path.append('../../')
-from pyfunc.file.get_filename_from_path import get_filename_from_path
-from pyfunc.file.check_and_create_path import check_and_create_path
+from file.get_filename_from_path import get_filename_from_path
+from file.check_and_create_path import check_and_create_path
 
 
 

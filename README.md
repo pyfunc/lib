@@ -39,6 +39,7 @@ pytest
 simple method to generate a requirements.txt file is to pipe them,
 ```bash
 pip freeze > requirements.txt
+pip freeze > requirements/runtime.txt
 ```
 
 ## if push not possible
@@ -255,7 +256,27 @@ py generate_init.py -p src/pyfunc2/text
 ```bash
 py -m build
 ```
+```bash
+py -m incremental.update pyfunc2 --newversion=0.1.18
+py -m incremental.update pyfunc2 --create
+py -m incremental.update pyfunc2 --patch
+
+py -m incremental.update pyfunc2 --rc
+py -m incremental.update pyfunc2
+```
 
 ```bash
 pip install dist/pyfunc2-0.1.15-py3-none-any.whl
+```
+
+
+## validate pyproject.toml
+
+```bash
+pip install 'validate-pyproject[all]'
+```
+
+
+```bash
+validate-pyproject pyproject.toml
 ```

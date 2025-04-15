@@ -1,7 +1,6 @@
 # Auto-generated __init__.py
 
-# Version of the pyfunc2 package
-__version__ = "0.1.15"
+
 
 # Import necessary modules and functions here
 from get_filename_from_path import get_filename_from_path
@@ -29,3 +28,9 @@ from sum_year_from_path_to_file import scan_recursive
 
 # Public API of the package
 __all__ = [get_filename_from_path, get_hash, move_file, remove_empty_folders, archive_path_list, check_and_create_path, check_and_create_path_from_filepath, check_existing_folder_list_in_path, convert_pdf_to_base64, create_folder, dir_list, file_list, find_duplicates, get_hash_sha256, is_file_hidden, is_path_hidden, move_duplicate_files, merge_pdfs, remove_duplicates, remove_duplicates_in_path, sum_year_from_path_to_file, scan_recursive]
+
+
+# Version of the pyfunc2 package
+import sys
+sys.path.append('../')
+from _version import __version__

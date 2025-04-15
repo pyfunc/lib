@@ -2,8 +2,8 @@ import sys
 
 sys.path.append('../')
 
-from pyfunc.file.find_duplicates import find_duplicates
-from pyfunc.file.move_file import move_file
+from file.find_duplicates import find_duplicates
+from file.move_file import move_file
 
 
 def remove_duplicates_in_path(source, duplicated):

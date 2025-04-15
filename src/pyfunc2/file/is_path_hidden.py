@@ -3,7 +3,7 @@ import sys
 
 sys.path.append('../')
 
-from pyfunc.file.is_file_hidden import is_file_hidden
+from file.is_file_hidden import is_file_hidden
 
 
 def is_path_hidden(filepath):

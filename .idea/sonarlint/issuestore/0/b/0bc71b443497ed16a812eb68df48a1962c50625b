@@ -1,0 +1,10 @@
+
+upython:S1481+"2Replace the unused local variable "root" with "_".(Â–ì¶ıÿÿÿÿJ$8026a265-d2da-4dca-87a9-a83c7e473968
+ipython:S1481Q"&Remove the unused local variable "ex".(¹çä†şÿÿÿÿJ$ccba28ca-8ff0-4644-b796-11b8aea00492
+’python:S3776"TRefactor this function to reduce its Cognitive Complexity from 50 to the 15 allowed.(íôËJ$b195d489-8206-446e-876e-dd31f3571cf7
+apython:S125"Remove this commented out code.(Î«Ï¿ıÿÿÿÿJ$2b874dd9-e764-429b-8e37-f934d27ef195
+apython:S125"Remove this commented out code.(ÂŒİèúÿÿÿÿJ$3f1ec703-d997-48df-9f02-d92502b6854b
+zpython:S5754="<Specify an exception class to catch or reraise the exception(ˆÊÉ·J$2107c2c1-684b-44e7-bec8-c34994a55144
+npython:S5806;"+Rename this variable; it shadows a builtin.(Ü¥§‹ùÿÿÿÿJ$a68b658d-f315-48d9-b60a-10253bf646bb
+hpython:S125@"Remove this commented out code.(ˆğÂ÷şÿÿÿÿ8Ñ·»‹2J$a754f73a-6b4e-4a59-8195-30a7a84af501
+apython:S125V"Remove this commented out code.(æğìúÿÿÿÿJ$c084e0de-51b7-4390-9465-b461dca1ddd1
