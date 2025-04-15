@@ -18,7 +18,7 @@ except FileNotFoundError:
 # Configuration setup
 setup(
     name="pyfunc2",
-    version="0.1.22",
+    version="0.1.23",
     description="libs for cameramonit, ocr, fin-officer, cfo, and other projects",
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
@@ -36,7 +36,8 @@ setup(
     },
     packages=["pyfunc2", "pyfunc2.config", "pyfunc2.email", "pyfunc2.file"],
     package_dir={"": "src"},
-    license="Apache-2.0",
+    license="Apache-2.0",  # Use simple string format
+    license_files=("LICENSE"),  # Empty tuple to explicitly prevent license files
     keywords=["python", "pyfunc", "pyfunc2", "pyfunc3", "pyfunc4", "pyfunc5", "pyfunc6",
               "pyfunc7", "pyfunc8", "pyfunc9", "pyfunc10", "pyfunc11", "pyfunc12",
               "pyfunc13", "pyfunc14", "pyfunc15", "pyfunc16", "pyfunc17", "pyfunc18",
@@ -57,5 +58,4 @@ setup(
     ],
     # Critical fix for the license-file issue:
     # This prevents setuptools from automatically adding a license-file entry
-    license_files=None,
 )
