@@ -2,6 +2,7 @@
 pyproject.toml.bak
 .bak
 .log
+example_invoice.pdf
 requirements.txt.backup
 # Byte-compiled / optimized / DLL files
 __pycache__/
