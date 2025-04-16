@@ -11,6 +11,7 @@ class DummyPart:
     def get_filename(self):
         return self.filename
     def get_content_type(self):
+        print(f"[DummyPart] get_content_type called, returning: {self.content_type}")
         return self.content_type
     def get_payload(self, decode=False):
         return self.payload
@@ -27,9 +28,12 @@ class DummyEmail:
     def __init__(self, parts):
         self.parts = parts
     def walk(self):
+        print("[DummyEmail] walk called, returning parts:", self.parts)
         return self.parts
     def get_content_maintype(self):
         return 'multipart'
+    def is_multipart(self):
+        return True
 
 @pytest.fixture
 def dummy_data():
