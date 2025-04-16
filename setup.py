@@ -18,7 +18,7 @@ except FileNotFoundError:
 # Configuration setup
 setup(
     name="pyfunc2",
-    version="0.1.47",
+    version="0.1.48",
     description="libs for cameramonit, ocr, fin-officer, cfo, and other projects",
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
@@ -36,6 +36,10 @@ setup(
     },
     packages=find_packages(where="src"),
     package_dir={"": "src"},
+    install_requires=[
+        line.strip() for line in open("requirements.txt")
+        if line.strip() and not line.startswith("#")
+    ],
     license="Apache-2.0",  # Use simple string format
     license_files=("LICENSE"),  # Empty tuple to explicitly prevent license files
     keywords=["python", "pyfunc", "pyfunc2", "pyfunc3", "pyfunc"],
