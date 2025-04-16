@@ -26,6 +26,8 @@ pillow
 PyPDF2
 pypdf
 pdfreader
+datefinder
+numpy
 requests==2.32.3
 setuptools==78.1.0
 six==1.17.0

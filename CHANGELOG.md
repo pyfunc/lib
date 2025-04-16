@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.39] - 2025-04-16
+
+### Added
+- Changes in examples/get_code_extension_dict_example.py
+- Changes in examples/get_dictionary_structure_by_separator_list_example.py
+- Changes in examples/get_dictionary_structure_from_headers_content_example.py
+- Changes in examples/get_header_list_example.py
+- Changes in examples/get_url_list_example.py
+- Changes in test/test_markdown_functions.py
+- Changes in test/test_pyfunc2.py
+
 ## [0.1.38] - 2025-04-16
 
 ## [0.1.37] - 2025-04-15

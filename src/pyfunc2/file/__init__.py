@@ -33,4 +33,3 @@ __all__ = [get_filename_from_path, get_hash, move_file, remove_empty_folders, ar
 # Version of the pyfunc2 package
 import sys
 sys.path.append('../')
-from _version import __version__
