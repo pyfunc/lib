@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.40] - 2025-04-16
+
+### Added
+- Changes in examples/get_filename_from_path_example.py
+- Changes in examples/get_hash_example.py
+- Changes in examples/load_csv_pandas_example.py
+- Changes in examples/load_csv_with_comma_quotas_example.py
+- Changes in examples/read_as_array_example.py
+- Changes in examples/read_as_text_example.py
+
 ## [0.1.39] - 2025-04-16
 
 ### Added
