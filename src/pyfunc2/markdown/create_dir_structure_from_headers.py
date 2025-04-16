@@ -5,21 +5,16 @@ import sys
 # markdown_file
 # source - path to source folder
 # pattern - regular expression pattern for Markdown headers
-def create_dir_structure_from_headers(markdown_file="",
-                                      path="",
-                                      pattern_list=[r'^#{1,6}\s+(.*)$', r'\[([^\]]+)\]\(([^)]+)\)']):
+def create_dir_structure_from_headers(markdown_file="", path="", pattern_list=[r'^#{1,6}\s+(.*)$']):
+    import re
     with open(markdown_file, 'r') as file:
         markdown = file.read()
-
-    for header in get_header_list(markdown, pattern_list[0]):
-        #print(header)
-        #exit()
-        for url in get_url_list(header, pattern_list[1]):
-            path_folder = os.path.join(path, str(url))
-            #print(path_folder)
-            #exit()
-            if not os.path.exists(path_folder):
-                os.makedirs(path_folder)
+    # Wyciągnij wszystkie nagłówki (tylko tekst, bez #)
+    headers = re.findall(pattern_list[0], markdown, re.MULTILINE)
+    for header in headers:
+        if header:
+            path_folder = os.path.join(path, header.strip())
+            os.makedirs(path_folder, exist_ok=True)
 
 
 

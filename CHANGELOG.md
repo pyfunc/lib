@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.47] - 2025-04-16
+
+### Changed
+- Changes in src/pyfunc2/__init__.py
+- Changes in src/pyfunc2/markdown/create_dir_structure.py
+- Changes in src/pyfunc2/markdown/create_dir_structure_from_headers.py
+- Changes in src/pyfunc2/markdown/create_folders_files.py
+- Changes in src/pyfunc2/ocr/__init__.py
+
 ## [0.1.46] - 2025-04-16
 
 ### Added

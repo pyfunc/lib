@@ -10,6 +10,7 @@ from .all_lasts import all_lasts
 from .email_update import email_update
 from .img_to_base64 import img_to_base64
 from .lasts import lasts
+from .ocr import *
 from .to_lower_case import convert_char
 from .to_lower_case import to_lower_case
 
