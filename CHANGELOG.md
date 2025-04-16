@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.45] - 2025-04-16
+
+### Added
+- Changes in examples/pdf_to_base64_example.py
+
 ## [0.1.44] - 2025-04-16
 
 ## [0.1.43] - 2025-04-16

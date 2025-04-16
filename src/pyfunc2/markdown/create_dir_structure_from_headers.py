@@ -2,11 +2,6 @@ import re
 import os
 import sys
 
-sys.path.append('../')
-from pyfunc.markdown.get_url_list import get_url_list
-from pyfunc.markdown.get_header_list import get_header_list
-
-
 # markdown_file
 # source - path to source folder
 # pattern - regular expression pattern for Markdown headers
@@ -27,3 +22,6 @@ def create_dir_structure_from_headers(markdown_file="",
                 os.makedirs(path_folder)
 
 
+
+from .get_url_list import get_url_list
+from .get_header_list import get_header_list

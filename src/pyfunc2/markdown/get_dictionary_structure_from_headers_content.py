@@ -2,11 +2,6 @@ import re
 import os
 import sys
 
-sys.path.append('../')
-from pyfunc.markdown.get_url_list import get_url_list
-from pyfunc.markdown.get_header_list import get_header_list
-
-
 # markdown_file
 # source - path to source folder
 # pattern - regular expression pattern for Markdown headers
@@ -30,3 +25,6 @@ def get_dictionary_structure_from_headers_content(markdown_file="", separator_li
             data[current_section] += line
 
     return data
+
+from .get_url_list import get_url_list
+from .get_header_list import get_header_list

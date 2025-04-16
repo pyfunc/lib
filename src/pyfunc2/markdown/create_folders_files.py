@@ -3,11 +3,10 @@ import os
 import sys
 import string
 
-sys.path.append('../')
-from pyfunc.markdown.get_url_list import get_url_list
-from pyfunc.markdown.get_dictionary_structure_from_headers_content import get_dictionary_structure_from_headers_content
-from pyfunc.markdown.get_dictionary_structure_by_separator_list import get_dictionary_structure_by_separator_list
-from pyfunc.markdown.get_code_extension_dict import get_code_extension_dict
+from .get_url_list import get_url_list
+from .get_dictionary_structure_from_headers_content import get_dictionary_structure_from_headers_content
+from .get_dictionary_structure_by_separator_list import get_dictionary_structure_by_separator_list
+from .get_code_extension_dict import get_code_extension_dict
 
 
 # markdown_file
@@ -70,5 +69,3 @@ def create_folders_files(markdown_file="",
             except Exception as e:
                 print(e)
                 continue
-
-
