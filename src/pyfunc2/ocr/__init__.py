@@ -21,4 +21,19 @@ from .get_date_from_pdf import get_date_from_pdf
 from .get_date_from_pdf_pattern import get_date_from_pdf_pattern
 
 # Public API of the package
-__all__ = [CompanyList, convert_pdf_to_string, find_string_in_file_path, find_string_in_pdf, from_folder_to_year, from_month_to_company, convertPdf2String, remove_extra_spaces, remove_all_spaces, remove_only_single_spaces, get_company_from_pdf, find_company, convertPdf2String, remove_extra_spaces, remove_all_spaces, remove_only_single_spaces, get_date_from_pdf, get_date_from_pdf_pattern]
+__all__ = [
+    "CompanyList",
+    "convert_pdf_to_string",
+    "find_string_in_file_path",
+    "find_string_in_pdf",
+    "from_folder_to_year",
+    "from_month_to_company",
+    "convertPdf2String",
+    "remove_extra_spaces",
+    "remove_all_spaces",
+    "remove_only_single_spaces",
+    "get_company_from_pdf",
+    "find_company",
+    "get_date_from_pdf",
+    "get_date_from_pdf_pattern"
+]
