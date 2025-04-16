@@ -14,9 +14,7 @@
 
 import subprocess
 import os
-import sys
-sys.path.append('../')
-from local.folder_exist import folder_exist
+from .folder_exist import folder_exist
 
 
 def clone_repo(clone_url, repo_name, clone_path):

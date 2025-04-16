@@ -1,6 +1,6 @@
 import sys
 sys.path.append('../')
-from local.folder_exist import folder_exist
+from .folder_exist import folder_exist
 
 def clone_repos_from_org(org_name: object, repos: object, path_folder: object) -> object:
     if repos:

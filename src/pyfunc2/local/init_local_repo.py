@@ -1,8 +1,6 @@
-import sys
 import os
 
-sys.path.append('../')
-from local.git_folders_in_path import git_folders_in_path
+from .git_folders_in_path import git_folders_in_path
 
 def init_local_repo(local_path):
     git_local_repos = git_folders_in_path(local_path)
