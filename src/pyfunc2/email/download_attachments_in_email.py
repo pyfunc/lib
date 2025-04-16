@@ -1,9 +1,13 @@
+import base64
 import os
 import email
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.image import MIMEImage
+from pyfunc2.file.check_and_create_path import check_and_create_path
+
 from types import NoneType
 
-import sys
-from ..file.check_and_create_path import check_and_create_path
 
 # pip install python-magic
 
@@ -15,10 +19,40 @@ def download_attachments_in_email(resp, data, emailid="", outputdir="", xx=0,
 
     # print("download_attachments_in_email emailid:", emailid)
     # resp, data = m.fetch(emailid, '(RFC822)')
+    global type
     print("mail respo:", resp)
 
+
+    if not isinstance(data, list):
+        print("data is not list")
+        return
+
+    if not isinstance(data[0], tuple):
+        print("data[0] is not list")
+        return
+
     email_body = data[0][1]
+
+    if not isinstance(email_body, bytes):
+        print("email_body is not bytes")
+        return
+
+    # print(email_body)
+    # print(str(email_body))
+    # print(str(type(email_body)))
+    # check if email_body is bytes
+
+
+    #email_body = email_body.decode('utf-8')
+
+    # print("email_body after decode is bytes")
+
+    # print(type(email_body))
+    # print(email_body)
+
+    # print("email_body
     mail = email.message_from_bytes(email_body)
+
     if mail.get_content_maintype() != 'multipart':
         return
 

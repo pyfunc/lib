@@ -1,9 +1,8 @@
-import sys
 import os
 
-sys.path.append('../')
-from local.git_folders_in_path import git_folders_in_path
-from function.differenceElementsInArrays import differenceElementsInArrays
+from .git_folders_in_path import git_folders_in_path
+# from function.differenceElementsInArrays import differenceElementsInArrays
++ # from ..function.differenceElementsInArrays import differenceElementsInArrays
 
 
 def pull_all_repos(local_path):
@@ -12,10 +11,10 @@ def pull_all_repos(local_path):
     # print(git_local_repos)
     not_expected_folders = [local_path + '/.idea']
     # remove from array existing elements from another array
-    filtered_non_git_folders = differenceElementsInArrays(git_local_repos, not_expected_folders)
-    print(filtered_non_git_folders)
+    # filtered_non_git_folders = differenceElementsInArrays(git_local_repos, not_expected_folders)
+    # print(filtered_non_git_folders)
     # not_existing_folder = differenceElementsInArrays(expected_folders, repos_in_orgs)
-    for repo_folder in filtered_non_git_folders:
+    for repo_folder in git_local_repos:
         # get last folder from path
         repo_name = repo_folder.split('/')[-1]
         print(repo_name)
