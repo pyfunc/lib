@@ -121,6 +121,7 @@ def download_attachments_in_email(resp, data, emailid="", outputdir="", xx=0,
                 #type = mime.from_file(content)
                 type = part.get_content_type()
                 extension = type.split("/")[1]
+                print(f"DEBUG: type={type}, extension={extension}, attachements={attachements}")
 
                 subfolder = ""
                 if extension != attachements[0]:

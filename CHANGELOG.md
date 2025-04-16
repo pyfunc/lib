@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.55] - 2025-04-16
+
+### Added
+- Changes in src/pyfunc2/serialization/get_class_from_dict.py
+- Changes in src/pyfunc2/serialization/get_class_from_json.py
+- Changes in src/pyfunc2/serialization/get_class_from_str.py
+- Changes in src/pyfunc2/serialization/get_list_from_dict.py
+- Changes in src/pyfunc2/serialization/get_list_from_json.py
+- Changes in src/pyfunc2/serialization/get_list_from_str.py
+- Changes in src/pyfunc2/serialization/get_str_from_list.py
+- Changes in test/test_download_attachments_in_email.py
+
+### Changed
+- Changes in src/pyfunc2/local/pull_all_repos.py
+
 ## [0.1.54] - 2025-04-16
 
 ## [0.1.53] - 2025-04-16

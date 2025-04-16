@@ -1,8 +1,6 @@
 import os
 
 from .git_folders_in_path import git_folders_in_path
-# from function.differenceElementsInArrays import differenceElementsInArrays
-+ # from ..function.differenceElementsInArrays import differenceElementsInArrays
 
 
 def pull_all_repos(local_path):
