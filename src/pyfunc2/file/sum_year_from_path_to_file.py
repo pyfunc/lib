@@ -5,7 +5,7 @@ sys.path.append('../')
 import io
 import shutil
 import base64
-from pdf2image import convert_from_path
+from pdf2image import convert_from_path  # pdf2image uses poppler
 from wand.image import Image
 from io import BytesIO
 
@@ -89,7 +89,8 @@ def scan_recursive(path, extension_list=['.pdf'], path_out="./report/2023/img/")
 
                     # icon of pdf
                     base64_icon = ""
-                    base64_icon = convert_pdf_to_base64(file_path, path_out)
+                    # Nowy interfejs: path_out nie jest już wymagany, tylko ścieżka do pliku PDF
+                    base64_icon = convert_pdf_to_base64(file_path)
                     dict_data['image'] = base64_icon
 
                     # get price to file *.pdf.price

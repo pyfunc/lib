@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.41] - 2025-04-16
+
+### Added
+- Changes in examples/convert_pdf_to_string_example.py
+- Changes in examples/find_string_in_pdf_simple_example.py
+- Changes in test/test_convert_pdf_to_base64.py
+
 ## [0.1.40] - 2025-04-16
 
 ### Added
