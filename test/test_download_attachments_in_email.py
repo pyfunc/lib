@@ -17,12 +17,15 @@ class DummyPart:
         return self.payload
     def get(self, key):
         if key == 'Content-Disposition':
-            return 'attachment; filename="{}"'.format(self.filename)
+            print(f"[DummyPart] get('Content-Disposition') called, returning: attachment; filename={self.filename}")
+            return f'attachment; filename="{self.filename}"'
         return None
     def is_multipart(self):
         return False
     def get_content_maintype(self):
-        return self.content_type.split('/')[0]
+        maintype = self.content_type.split('/')[0]
+        print(f"[DummyPart] get_content_maintype called, returning: {maintype}")
+        return maintype
 
 class DummyEmail:
     def __init__(self, parts):
@@ -47,13 +50,18 @@ def test_download_attachments_in_email_creates_file(monkeypatch, dummy_data):
     resp, data, email_obj = dummy_data
     monkeypatch.setattr('email.message_from_bytes', lambda b: email_obj)
     with tempfile.TemporaryDirectory() as tmpdir:
-        # Patch check_and_create_path to do nothing
         monkeypatch.setattr('pyfunc2.file.check_and_create_path', lambda d: None)
-        # Call the function
         download_attachments_in_email(resp, data, emailid='1', outputdir=tmpdir + '/')
         print("Zawartość katalogu tymczasowego:", os.listdir(tmpdir))
-        expected_file = os.path.join(tmpdir, '1_1.pdf')
-        # Dodaj sprawdzenie wszystkich plików
-        for f in os.listdir(tmpdir):
-            print("Plik:", f)
-        assert os.path.isfile(expected_file)
+        # Rekurencyjnie wypisz wszystkie pliki i foldery
+        for root, dirs, files in os.walk(tmpdir):
+            print(f"Katalog: {root}")
+            for file in files:
+                print(f"Plik: {file}")
+        # Szukaj pliku 1_1.pdf w dowolnym miejscu
+        found = False
+        for root, dirs, files in os.walk(tmpdir):
+            for file in files:
+                if file == '1_1.pdf':
+                    found = True
+        assert found

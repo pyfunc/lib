@@ -26,7 +26,7 @@ except FileNotFoundError:
 # Configuration setup
 setup(
     name="pyfunc2",
-    version="0.1.54",
+    version="0.1.55",
     description="libs for cameramonit, ocr, fin-officer, cfo, and other projects",
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
