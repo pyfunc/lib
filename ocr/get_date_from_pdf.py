@@ -13,7 +13,8 @@ import locale
 import dateutil.parser as dparser
 
 import sys
-from pypdf import PdfReader
+from PyPDF2 import PdfReader
+#import PyPDF2
 
 
 # pip3 install pypdf

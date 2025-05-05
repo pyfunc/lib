@@ -1,8 +1,8 @@
-# import PyPDF2
+#import PyPDF2
 # python -m pip install pdfreader
 # https://pypi.org/project/datefinder/
 import re
-from pypdf import PdfReader
+from PyPDF2 import PdfReader
 
 # Install:
 # python -m pip install pdfreader
@@ -16,7 +16,6 @@ from pypdf import PdfReader
 def convertPdf2String(path):
     # load PDF file
     reader = PdfReader(path)
-    number_of_pages = len(reader.pages)
     page = reader.pages[0]
     text = page.extract_text()
     return text
