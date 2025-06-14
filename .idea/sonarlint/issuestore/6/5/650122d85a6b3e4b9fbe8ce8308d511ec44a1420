@@ -1,0 +1,8 @@
+
+\python:S125	"Remove this commented out code.(ı…áÃJ$ca354c14-402f-4b5b-b14d-0ab6549b5814
+python:S1172"5Remove the unused function parameter "remote_folder".(µğ°œøÿÿÿÿ8úé¬‹2J$7a4c0b59-cac7-4023-b39f-b05fc173af65
+©python:S1542"_Rename function "downloaAttachmentsInEmail" to match the regular expression ^[a-z_][a-z0-9_]*$.(µğ°œøÿÿÿÿ8úé¬‹2J$4cc11031-d14d-4f25-b2d2-c3afc880f3ca
+ppython:S1481"2Replace the unused local variable "resp" with "_".(óùšJ$48927270-d156-431c-a5e3-8771e38c1aaa
+ python:S1542"cRename function "downloadAllAttachmentsInInbox" to match the regular expression ^[a-z_][a-z0-9_]*$.(ŞŞğJ$d352a953-73e5-48ca-8060-03868d8478c5
+|python:S1481"2Replace the unused local variable "resp" with "_".(£«‡šøÿÿÿÿ8ûé¬‹2J$6742ef63-3271-4161-85ba-3da2ca39caae
+\python:S125"Remove this commented out code.(ÔÙ•ŒJ$3ccaacc9-171e-4df1-b84b-1041f6ded7c5

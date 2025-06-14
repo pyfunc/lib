@@ -1,0 +1,15 @@
+
+›python:S1192"QDefine a constant instead of duplicating this literal "/path/to/folder" 14 times.(Ú“€ÿûÿÿÿÿ8‹¤”†‹2J$843e906b-e836-4a1a-a364-cbe9dea4d699
+špython:S1192	"PDefine a constant instead of duplicating this literal "imap.gmail.com" 14 times.(»›Åçÿÿÿÿÿ8‹¤”†‹2J$bc50b42d-13f9-488d-a9be-d453489f7aba
+|python:S5914"7Replace this expression; its boolean value is constant.(…”ÙŽ8‹¤”†‹2J$84951edb-e552-48e3-8772-33ad61a98cf3
+|python:S5914I"7Replace this expression; its boolean value is constant.(…”ÙŽ8‹¤”†‹2J$14391eac-b586-4473-976f-67bf6b1caeda
+|python:S5914W"7Replace this expression; its boolean value is constant.(…”ÙŽ8‹¤”†‹2J$e9eee2db-b8cb-4959-abd5-f2ee7bdc990b
+|python:S5914e"7Replace this expression; its boolean value is constant.(…”ÙŽ8‹¤”†‹2J$bd033388-166e-4915-9416-fa4b8d3051ac
+rpython:S1481«",Remove the unused local variable "password".(Þ¦™ä8‹¤”†‹2J$91ed53e8-86e1-4de4-88bc-3cd745540486
+{python:S1481¬"0Remove the unused local variable "local_folder".(Ú“€ÿûÿÿÿÿ8‹¤”†‹2J$7bf1f3da-a7d8-44cd-95bf-57aae1d93310
+{python:S1481¯"0Remove the unused local variable "select_month".(³•ª‰ÿÿÿÿÿ8‹¤”†‹2J$09a2b19f-b2c3-41d6-b7c3-be2c72fe4627
+upython:S1481©"*Remove the unused local variable "server".(»›Åçÿÿÿÿÿ8‹¤”†‹2J$99e27010-a5e0-446e-8e11-a4362bafe8d2
+|python:S1481­"1Remove the unused local variable "remote_folder".(‹¤ÙÕýÿÿÿÿ8‹¤”†‹2J$d2e6c06b-d326-423d-abab-186eb2171562
+opython:S1481®")Remove the unused local variable "limit".(¦ä—¬8‹¤”†‹2J$0ed16562-a3ba-4cd5-bb55-2aa392ba270c
+spython:S1481°"(Remove the unused local variable "year".(î“ŽŠüÿÿÿÿ8‹¤”†‹2J$9d86453f-7457-44c8-b36e-0999cbfa6689
+npython:S1481ª"(Remove the unused local variable "user".(¦øÖ´8‹¤”†‹2J$41f1469b-54b9-420f-a6ac-6ed966066c36
